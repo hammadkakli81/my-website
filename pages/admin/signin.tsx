@@ -8,7 +8,7 @@ const AdminSignin: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Signin | Hammad</title>
+        <title>Signin | Hammad.</title>
       </Head>
       <Layout>
         <Signin />
