@@ -1,0 +1,25 @@
+@import '../../styles/sass-variables';
+
+.sidebar {
+  width: 20%;
+  height: calc(100vh - 95px);
+  background-color: var(--color-primary-light);
+  color: var(--color-background);
+
+  &_link {
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 13px;
+    background-color: lighten($color-primary, 3);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      background-color: $color-primary;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba($color-white, 0.2);
+    }
+  }
+}

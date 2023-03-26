@@ -1,0 +1,126 @@
+@import '../styles/sass-variables';
+@import '../styles/mixins';
+
+.contact {
+  padding: 5rem 0;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    margin-right: 5%;
+    width: 50%;
+
+    @include respond(tab-port) {
+      width: 70%;
+      margin-right: 0;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
+  }
+
+  &__right {
+    width: 45%;
+    &_info {
+      display: flex;
+      align-items: flex-start;
+
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+
+    &_paragraph {
+      @include respond(phone) {
+        transform: translateX(-4rem);
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 70%;
+      margin-top: 5rem;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      margin-top: 5rem;
+    }
+
+    &_heading {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.form {
+  width: 100%;
+
+  &__input {
+    display: block;
+    width: 100%;
+    // margin-bottom: 2rem;
+    font: inherit;
+    font-size: var(--default-font-size);
+    padding: 1rem 2rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+    outline: 4px solid transparent;
+    border: 2px solid rgba($color_primary, 0.5);
+    transition: all 0.2s ease-out;
+
+    &_name {
+      height: 5rem;
+    }
+
+    &_email {
+      height: 5rem;
+    }
+
+    &_message {
+      height: 15rem;
+    }
+
+    &:focus {
+      outline: 4px solid rgba($color_primary, 0.15);
+    }
+  }
+
+  &__button {
+    display: flex;
+    transition: all 0.2s ease-out;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    justify-content: center;
+
+    &_text {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+
+    &:disabled {
+      background-color: var(--color-primary-very-light);
+      border: 1px solid var(--color-primary-very-light);
+      box-shadow: none;
+      transform: translate(0);
+    }
+  }
+}
+
+.error {
+  margin-left: 2.2rem;
+  height: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: var(--color-danger);
+}

@@ -1,0 +1,106 @@
+@import '../../styles/sass-variables';
+@import '../../styles/mixins';
+
+.single_training {
+  padding: 2rem;
+  width: 60%;
+  margin: auto;
+
+  @include respond(tab-land) {
+    width: 80%;
+  }
+  @include respond(tab-port) {
+    width: 90%;
+  }
+  @include respond(phone) {
+    width: 100%;
+  }
+
+  &__heading {
+    font-size: 8rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+
+    @include respond(tab-port) {
+      font-size: 6rem;
+    }
+    @include respond(phone) {
+      font-size: 4rem;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__main_desc {
+    background-color: var(--color-primary);
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__heading {
+      display: inline-block;
+      color: var(--color-background);
+      width: 90%;
+    }
+  }
+
+  &__main_desc_btn {
+    display: block;
+    color: var(--color-background);
+    background-color: transparent;
+
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.1s ease-out;
+
+    &:hover {
+      background-color: rgba($color: $color_white, $alpha: 0.3);
+    }
+
+    &__no_hover {
+      cursor: default;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__main_desc_btn__active {
+    transform: rotate(180deg);
+  }
+
+  &__further_desc_container {
+    padding: 2rem 2rem;
+    background-color: var(--color-primary-light);
+
+    h3 {
+      font-size: 1.4rem;
+      color: var(--color-background);
+    }
+  }
+}
+
+.section_btn {
+  padding: 0.5rem 0;
+  font-size: 1.4rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px solid var(--color-primary);
+
+  margin: 2rem 0;
+}
+
+.section_close {
+  position: absolute;
+  right: 0;
+}
