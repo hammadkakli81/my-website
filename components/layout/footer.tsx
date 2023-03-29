@@ -24,7 +24,7 @@ const Footer: FC = (): ReactElement => {
               </p>
               <p className="paragraph paragraph--footer u-margin-bottom-medium">
                 <span className="paragraph--footer__bold">Phone:</span> (+92)
-                321 7796479
+                300 8089934
               </p>
             </div>
 
