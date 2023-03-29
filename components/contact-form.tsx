@@ -185,8 +185,7 @@ const ContactForm: FC = (): ReactElement => {
               >
                 Phone:
               </h3>
-              <p className="paragraph">(+92)
-                300 8089934</p>
+              <p className="paragraph">(+92) 300 8089934</p>
             </div>
           </div>
         </div>
