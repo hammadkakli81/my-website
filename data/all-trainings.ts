@@ -341,105 +341,136 @@ export const allTrainings: Training[] = [
   {
     name: trainingsName.virtualAssistant,
     excerptDesc:
-      'This course is for those who are students or freelancers who have not any investment but they have passion to learn new skills and provide services to their clients. In this course you can learn about how manage seller central account and how to rank your Client’s product from scratch and build an empire. You will learn which services a virtual assistant can provide.',
+      "This course is for those who are students or freelancers who have not any investment but they have passion to learn new skills and provide services to their clients. In this course you can learn about how to manage a seller 's central account and how to rank your Client’s product from scratch and build an empire. You will learn which services a virtual assistant can provide.",
     description: [
       {
-        name: 'Introduction',
+        name: 'Introduction to eCommerce',
         furtherDesc: [
-          'Why Amazon',
-          'Amazon Business Trends',
-          'Business Potential',
-          'Decision of the marketplace',
-          'Which information needed to create account (Professional, Individual)',
-          'Account Setup',
+          'Why we choose Amazon',
+          'Introduction to Amazon',
+          'Marketplace Flexibility',
+          'Investment Needed',
+          'Business Models',
+          'Individual vs Professional account',
+          'Individual professional vs company professional account',
         ],
       },
-
       {
-        name: 'Product Hunting',
-        furtherDesc: ['FBA Wholesale', 'Private Label', 'Dropshipping'],
+        name: 'Initial Setup for Tools',
+        furtherDesc: [
+          'Free tools',
+          'How to install free tools',
+          'Benefits of free tools',
+          'Paid tools',
+          'Costing and usage of paid tools',
+          'Benefits of paid tools',
+          'How to create to-do list',
+          'Benefits of to-do list',
+          'Assignment',
+        ],
       },
-
       {
-        name: 'Listing Creation',
-        furtherDesc: ['FBA Wholesale', 'Private Label', 'Dropshipping'],
+        name: 'Product Hunting for FBA Wholesale',
+        furtherDesc: [
+          'Product selection Criteria',
+          'Search product using tools',
+          'Validate product on tools',
+          'Brand Distributor Hunting',
+          'Finalise and Update the products, suppliers in to-do list',
+          'Listing Creation',
+          'Assignment',
+        ],
       },
-
       {
-        name: 'Handling listing issues',
-        furtherDesc: ['FBA Wholesale', 'Private Label', 'Dropshipping'],
+        name: 'Product Sourcing FBA Wholesale',
+        furtherDesc: [
+          'How to find suppliers',
+          'Contact Method',
+          'Reverse Sourcing',
+          'Negotiation',
+          'Shipping Methods',
+          '3pl vs Amazon Prep Labelling',
+          'Cost Calculation',
+          'Profit Calculation',
+          'Assignment',
+        ],
       },
-
       {
-        name: 'Content Writing',
-        furtherDesc: [],
+        name: 'Product Hunting for Private Label',
+        furtherDesc: [
+          'Product Selection Criteria',
+          'Search Product using tools',
+          'Competitive analysis',
+          'Product selection using keywords',
+          'Patent Check',
+          'Assignment',
+        ],
       },
-
       {
-        name: 'Sourcing and supplier hunting',
-        furtherDesc: ['FBA Wholesale', 'Private Label', 'Dropshipping'],
+        name: 'Product Sourcing for Private Label',
+        furtherDesc: [
+          'Search Manufacturers',
+          'AliBaba Sourcing',
+          'USA Suppliers',
+          'UK Suppliers',
+          'MOQ Negotiation',
+          'Freight Forwarders',
+          'Cost Calculation',
+          'Profit Calculation',
+          'Assignment',
+        ],
       },
-
       {
-        name: 'Inventory Management',
-        furtherDesc: [],
+        name: 'Product Launching',
+        furtherDesc: [
+          'Amazon recommended barcode',
+          'Listing Creation',
+          'Product Labels',
+          'Box Labels',
+          'What happens if box quantity greater than 10',
+          'Shipment Templates',
+          'Own Carrier vs Amazon Partner Carrier',
+          'Assignment',
+        ],
       },
-
       {
-        name: 'Handle FBM Orders',
-        furtherDesc: [],
+        name: 'Product Ranking',
+        furtherDesc: [
+          'Update listing with enhanced keywords',
+          'Content writing using tools',
+          'Primary keywords vs secondary keywords',
+          'Create Campaigns on selected Keywords',
+          'Difference between keyword types',
+          'Importance of Trademark Brand Registry',
+          'Offers coupons deals promotional sales',
+          'Enhanced brand content',
+          'PPC management',
+          'Assignment',
+        ],
       },
-
-      ///////////////////
-
       {
-        name: 'Handle Buyer Complaints',
-        furtherDesc: [],
+        name: 'Freelancing',
+        furtherDesc: [
+          'Create Fiverr Profile',
+          'Profile Completion',
+          'Pass the english test',
+          'Create Gigs',
+          'Images creation using canva',
+          'Content writing',
+          'Assignment',
+        ],
       },
-
       {
-        name: 'Account health issues',
-        furtherDesc: [],
-      },
-
-      {
-        name: 'Find and resolve customer support issues',
-        furtherDesc: [],
-      },
-
-      {
-        name: 'How to avoid late shipments and cancelation rate',
-        furtherDesc: [],
-      },
-
-      {
-        name: 'Reports Management',
-        furtherDesc: [],
-      },
-
-      {
-        name: 'Shipment creation',
-        furtherDesc: [],
-      },
-
-      {
-        name: 'Order management',
-        furtherDesc: [],
-      },
-
-      {
-        name: 'PPC Optimization',
-        furtherDesc: [],
-      },
-
-      {
-        name: 'PL Product Launching Strategies (Promotions, Coupons)',
-        furtherDesc: [],
-      },
-
-      {
-        name: 'Listing promotion (How to find honest clients VIA social media or freelancing websites)',
-        furtherDesc: [],
+        name: 'Freelancing',
+        furtherDesc: [
+          'Create upwork profile',
+          'Profile completion',
+          'How to get approve',
+          'Proposal cover letter writing',
+          'Offer bidding',
+          'Other sources of client hunting',
+          'Assignment',
+        ],
       },
     ],
     slug: slugify(trainingsName.virtualAssistant.toLowerCase()),
