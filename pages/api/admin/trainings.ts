@@ -1,11 +1,11 @@
 import { NextApiHandler } from 'next';
-import { unstable_getServerSession as getServerSession } from 'next-auth';
+import { unstable_getServerSession as getServerSession  } from 'next-auth';
 import fs from 'fs/promises';
 import path from 'path';
 
 import { authOptions } from '../auth/[...nextauth]';
 
-const FILE_PATH = path.join(process.cwd(), 'data', 'all-services.json');
+const FILE_PATH = path.join(process.cwd(), 'data', 'all-trainings.ts');
 
 const handler: NextApiHandler = async (req, res) => {
   if (req.method === 'PATCH') {

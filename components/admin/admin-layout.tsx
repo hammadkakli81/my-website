@@ -5,6 +5,8 @@ import {
   ReactElement,
   ReactNode,
 } from 'react';
+import NextNProgress from 'nextjs-progressbar';
+
 import NotificationComponent from '../common/notification';
 import MainNavigation from '../layout/main-navigation';
 import Sidebar from './sidebar';
@@ -20,7 +22,7 @@ const Wrapped: FC<PropsWithChildren> = props => (
   <div className={styles.wrapped}>{props.children}</div>
 );
 
-const AdminLayout: FC<Props> = (props): ReactElement => {
+const AdminLayout: FC<Props> = props => {
   const session = useSession();
 
   let content: JSX.Element | null = null;
@@ -38,6 +40,11 @@ const AdminLayout: FC<Props> = (props): ReactElement => {
 
   return (
     <Fragment>
+      <NextNProgress
+        height={3}
+        color="#3acbf0"
+        options={{ showSpinner: false }}
+      />
       <MainNavigation />
       <main style={{ display: 'flex' }}>
         <Sidebar />

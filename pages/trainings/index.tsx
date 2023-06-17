@@ -1,9 +1,9 @@
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import Head from 'next/head';
 import TrainingsComponent from '../../components/trainings/all-trainings';
-import { allTrainings } from '../../data/all-trainings';
 import { Training } from '../../common-types/training';
 import Layout from '../../components/layout/layout';
+import { getTrainings } from '../../utils/trainings.utils';
 
 const Trainings: NextPage<
   InferGetStaticPropsType<typeof getStaticProps>
@@ -24,12 +24,8 @@ interface StaticPropsReturns {
   trainings: Training[];
 }
 
-export const getStaticProps: GetStaticProps<StaticPropsReturns> = () => {
-  return {
-    props: {
-      trainings: allTrainings,
-    },
-  };
-};
+export const getStaticProps: GetStaticProps<StaticPropsReturns> = async () => ({
+  props: { trainings: await getTrainings() },
+});
 
 export default Trainings;

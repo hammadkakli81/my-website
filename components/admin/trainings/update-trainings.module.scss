@@ -1,0 +1,35 @@
+.trainings {
+  overflow-y: scroll;
+
+  height: calc(100vh - 95px);
+  background-color: var(--color-primary-very-light);
+  color: var(--color-background);
+  padding: 5rem;
+
+  .content {
+    width: 75%;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 34px;
+    margin-bottom: 2rem;
+  }
+
+  .training_card {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    background-color: var(--color-primary);
+    margin-bottom: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-primary-light);
+    }
+  }
+}

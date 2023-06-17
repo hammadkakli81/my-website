@@ -19,6 +19,7 @@ let navLinks: NavLinkInterface[] = [
   { href: '/contact', text: 'Contact Me' },
 ];
 
+// For Admin or Non-Admin users, they are different
 const navLinksResp: NavLinkInterface[] = [
   { href: '/about', text: 'About Me' },
   { href: '/trainings', text: 'Trainings' },
@@ -79,7 +80,9 @@ const MainNavigation: FC = (): ReactElement => {
                 </button>
               )}
             </ul>
-            <SocialMediaIcons fillColor="light" />
+            {router.pathname.startsWith('/admin') ? null : (
+              <SocialMediaIcons fillColor="light" />
+            )}
           </nav>
 
           <div

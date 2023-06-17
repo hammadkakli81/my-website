@@ -1,14 +1,13 @@
-import fs from 'fs/promises';
 import {
   GetServerSideProps,
   InferGetServerSidePropsType,
   NextPage,
 } from 'next';
 import Head from 'next/head';
-import path from 'path';
 import { Service } from '../../common-types/service';
 import AdminLayout from '../../components/admin/admin-layout';
-import Services from '../../components/admin/services/services';
+import UpdateServices from '../../components/admin/services/update';
+import { getServices } from '../../utils/services.utils';
 
 type Props = InferGetServerSidePropsType<typeof getServerSideProps>;
 
@@ -19,7 +18,7 @@ const ServicesPage: NextPage<Props> = ({ services }) => {
         <title>Admin Services | Hammad</title>
       </Head>
       <AdminLayout>
-        <Services services={services} />
+        <UpdateServices services={services} />
       </AdminLayout>
     </>
   );
@@ -28,9 +27,7 @@ const ServicesPage: NextPage<Props> = ({ services }) => {
 type Returned = { services: Service[] };
 
 export const getServerSideProps: GetServerSideProps<Returned> = async () => {
-  const services = (await fs
-    .readFile(path.join(process.cwd(), 'data', 'all-services.json'), 'utf-8')
-    .then(data => JSON.parse(data))) as Service[];
+  const services = await getServices();
 
   return { props: { services } };
 };

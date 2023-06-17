@@ -25,9 +25,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     return { props: {}, redirect: { destination: '/admin/dashboard' } };
   }
 
-  return {
-    props: {},
-  };
+  return { props: {} };
 };
 
 export default AdminSignin;

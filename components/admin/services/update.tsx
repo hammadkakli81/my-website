@@ -4,9 +4,9 @@ import { type FC, useState, useContext } from 'react';
 import { Service } from '../../../common-types/service';
 import NotificationContext from '../../../contexts/notification-context';
 import ServiceCard from './service-card';
-import styles from './services.module.scss';
+import styles from './update.module.scss';
 
-const Services: FC<{ services: Service[] }> = ({ services }) => {
+const UpdateServices: FC<{ services: Service[] }> = ({ services }) => {
   const notificationContext = useContext(NotificationContext);
 
   const [servicesToUpdate, setServicesToUpdate] = useState(services);
@@ -75,4 +75,4 @@ const Services: FC<{ services: Service[] }> = ({ services }) => {
   );
 };
 
-export default Services;
+export default UpdateServices;
