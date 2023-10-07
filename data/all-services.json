@@ -1,0 +1,14 @@
+[
+  { "name": "Amazon Account Management", "slug": "amazon-account-management" },
+  { "name": "US LLC / UK LTD Formation", "slug": "us-llc-uk-ltd-formation" },
+  { "name": "Amazon Account Creation", "slug": "amazon-account-creation" },
+  { "name": "Product Hunting", "slug": "product-hunting" },
+  { "name": "Supplier Hunting", "slug": "supplier-hunting" },
+  { "name": "Product Launching", "slug": "product-launching" },
+  { "name": "Product Ranking", "slug": "Product-Ranking" },
+  {
+    "name": "Walmart Account Management",
+    "slug": "walmart-account-management"
+  },
+  { "name": "eBay Account Management", "slug": "ebay-account-management" }
+]

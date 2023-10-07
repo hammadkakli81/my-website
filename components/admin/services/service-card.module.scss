@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service_card {
+  flex: 1;
+  margin-right: 10px;
+  min-height: 50px;
+  padding: 1rem 2rem;
+  background-color: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  border-radius: 4px;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  svg {
+    cursor: pointer;
+    padding: 0.4rem;
+    margin: 0.4rem 0;
+    transition: all 0.2s ease-out;
+    border-radius: 4px;
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+
+    &:hover {
+      background-color: var(--color-primary-very-light);
+    }
+  }
+
+  .update_input {
+    height: 40px;
+    width: 50%;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    background-color: var(--color-primary);
+    border: 2px solid rgb(94, 196, 255);
+    font-size: 1.6rem;
+    color: var(--color-background);
+  }
+
+  .update_actions {
+    padding: 0.7rem 2rem;
+    border: none;
+    font: inherit;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease-out;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  .update_action_save {
+    background-color: rgb(94, 196, 255);
+    color: var(--color-primary);
+
+    &:hover {
+      background-color: rgb(111, 154, 179);
+    }
+  }
+
+  .update_action_cancel {
+    background-color: var(--color-danger);
+    color: var(--color-background);
+
+    &:hover {
+      background-color: darken(#e23030, 8);
+    }
+  }
+}
+
+.add {
+  width: 55px;
+  height: 55px;
+  border-radius: 4px;
+  background-color: rgb(94, 196, 255);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: rgb(111, 154, 179);
+  }
+}
+
+.italic {
+  text-transform: uppercase;
+  font-style: italic;
+}

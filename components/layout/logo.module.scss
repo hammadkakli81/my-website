@@ -1,0 +1,17 @@
+.logo {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &__primary {
+    color: var(--color-background);
+    border-bottom: 2px solid var(--color-background);
+  }
+
+  &__secondary {
+    color: var(--color-grey-dark);
+    border-bottom: 2px solid var(--color-grey-dark);
+  }
+}

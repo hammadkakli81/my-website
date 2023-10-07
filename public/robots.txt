@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin/*
+
+# Host
+Host: https://hammadkakli.com
+
+# Sitemaps
+Sitemap: https://hammadkakli.com/sitemap.xml
+Sitemap: https://hammadkakli.com/server-sitemap.xml

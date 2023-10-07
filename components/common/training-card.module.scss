@@ -1,0 +1,48 @@
+.training_card {
+  border-radius: 5px;
+
+  &__heading_container {
+    background-color: var(--color-primary);
+    padding: 1rem 3rem 1rem 3rem;
+    height: 8rem;
+    width: 100%;
+    color: var(--color-background);
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    height: calc(100% - 8rem);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__link_container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__light {
+    background-color: var(--color-background);
+    color: var(--color-grey-dark);
+
+    border: 2px solid var(--color-primary);
+  }
+
+  &__dark {
+    background-color: var(--color-primary-light);
+    color: var(--color-background);
+
+    border: 2px solid var(--color-primary);
+  }
+
+  &__list_item {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    transform: translateX(1.3rem);
+  }
+}

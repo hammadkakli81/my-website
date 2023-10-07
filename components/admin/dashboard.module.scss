@@ -1,0 +1,31 @@
+.dashboard {
+  min-height: calc(100vh - 95px);
+
+  background-color: var(--color-primary-very-light);
+  color: var(--color-background);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+}

@@ -1,0 +1,38 @@
+.signin {
+  min-height: calc(100vh - 95px);
+  background-color: #283045;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-background);
+  font-size: 16px;
+
+  .box {
+    width: 500px;
+    padding: 4rem 1rem;
+    background-color: #3e455a;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .input {
+    display: block;
+    height: 60px;
+    width: 400px;
+    margin-bottom: 10px;
+    background-color: #283045;
+    outline: none;
+    font-size: 16px;
+    color: inherit;
+    border-radius: 5px;
+    border: 3px solid #4f576e;
+    padding: 1rem 2rem;
+  }
+}

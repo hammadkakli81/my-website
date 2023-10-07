@@ -1,0 +1,66 @@
+.trainings {
+  a {
+    text-decoration: none;
+  }
+
+  height: 100%;
+  background-color: var(--color-primary-very-light);
+  color: var(--color-background);
+  padding: 5rem;
+
+  .content {
+    width: 75%;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 34px;
+    margin-bottom: 2rem;
+  }
+
+  .training_card {
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    color: var(--color-background);
+    background-color: var(--color-primary);
+    margin-bottom: 1rem;
+    border: none;
+    flex: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-primary-light);
+    }
+  }
+}
+
+.deleteBtn {
+  transition: all 0.2s ease-out;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transform: translate(1rem, -0.4rem);
+
+  &:hover {
+    background-color: rgba($color: white, $alpha: 0.2);
+  }
+}
+
+.deleteBtnTranslate {
+  transform: translateY(10px);
+}
+
+.deleteBtnIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,96 @@
+@import '../../styles/mixins';
+
+.header {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  height: 95px;
+
+  &__content {
+    padding: 30px 0 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+
+    @include respond(tab-land) {
+      display: none;
+    }
+  }
+
+  &__nav_list {
+    display: flex;
+  }
+
+  &__btn_container {
+    display: none;
+
+    @include respond(tab-land) {
+      display: block;
+      padding: 10px;
+      z-index: 5;
+      cursor: pointer;
+    }
+  }
+
+  &__btn_small_devices {
+    display: none;
+
+    @include respond(tab-land) {
+      display: block;
+      position: relative;
+
+      &,
+      &::before,
+      &::after {
+        display: inline-block;
+        width: 35px;
+        height: 3px;
+        background-color: var(--color-background);
+        border-radius: 50px;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        transition: all 0.2s ease-out;
+      }
+
+      &::before {
+        top: -8px;
+      }
+
+      &::after {
+        top: 8px;
+      }
+
+      &__active {
+        & {
+          position: fixed;
+          right: 30px;
+          padding: 10px;
+          background-color: transparent;
+        }
+      }
+
+      &__active {
+        &::before {
+          top: 0;
+          transform: rotate(135deg); // 180deg - 45deg = 135deg
+        }
+      }
+
+      &__active {
+        &::after {
+          top: 0;
+          transform: rotate(-135deg); // 180deg - 45deg = 135deg
+        }
+      }
+    }
+  }
+}
