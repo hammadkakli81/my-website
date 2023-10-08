@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Layout from '../../components/layout/layout';
 import { BsWhatsapp } from 'react-icons/bs';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const serviceF = {
   features: [
@@ -22,7 +23,58 @@ const serviceF = {
   ],
 };
 
+const options = {
+  Texas: 700,
+  Florida: 550,
+  Wyoming: 550,
+  Delaware: 550,
+  'New Mexico': 500,
+  Hawaii: 500,
+  Virginia: 600,
+  Alaska: 600,
+  Arkanasas: 550,
+  California: 500,
+  Colorado: 550,
+  Connecticut: 550,
+  Georgia: 550,
+  Idaho: 550,
+  Illinois: 600,
+  Indiana: 550,
+  Iowa: 500,
+  Kansas: 550,
+  Kentucky: 500,
+  Louisiana: 550,
+  Maine: 600,
+  Maryland: 550,
+  Massachusetts: 817,
+  Michigan: 500,
+  Minnesota: 550,
+  Mississippi: 520,
+  Missouri: 500,
+  Montana: 520,
+  Nevada: 800,
+  'New Hampshire': 550,
+  'New Jersey': 550,
+  'North Carolina': 550,
+  'North Dakota': 600,
+  Ohio: 550,
+  Oklahoma: 550,
+  Oregon: 550,
+  Pennsylvania: 600,
+  'Rhode Island': 600,
+  'South Carolina': 560,
+  'South Dakota': 600,
+  Tennessee: 700,
+  Utah: 500,
+  Vermont: 550,
+  Washington: 600,
+  'West Virginia': 550,
+  Wisconsin: 600,
+};
+
 const ServicePage: NextPage = () => {
+  const [selected, setSelected] = useState('');
+
   return (
     <>
       <Head>
@@ -36,7 +88,54 @@ const ServicePage: NextPage = () => {
             </header>
 
             <div className="p-8">
-              <header className="rounded-lg bg-gray-700 text-white p-4 mb-10">
+              <div className="p-8 rounded-lg w-full border-gray-100 border-4">
+                <div className="flex items-start justify-between">
+                  <div className="w-[60%]">
+                    <h3 className="text-4xl">
+                      <span className="font-bold">Price: </span>
+                      {!!selected && selected !== 'Select Service' ? (
+                        `$${options[selected as keyof typeof options]}`
+                      ) : (
+                        <span className="italic">Please select service</span>
+                      )}
+                    </h3>
+                  </div>
+                  <div className="w-[40%]">
+                    <select
+                      onChange={e => setSelected(e.target.value)}
+                      placeholder="Select Service"
+                      className="bg-gray-100 w-full h-[40px] cursor-pointer"
+                    >
+                      {['Select Service']
+                        .concat(Object.keys(options))
+                        .map(option => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div className="mt-5 flex items-center space-x-4">
+                  <a
+                    target="_blank"
+                    href="https://wa.me/+923008089934"
+                    className="px-8 py-4 flex items-center space-x-2 bg-green-600 hover:bg-green-700 transition text-white rounded-lg"
+                  >
+                    <span className="inline-block">Contact me on</span>
+                    <BsWhatsapp />
+                  </a>
+                  <Link
+                    href="/contact"
+                    className="px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition"
+                  >
+                    Email me
+                  </Link>
+                </div>
+              </div>
+
+              <header className="rounded-lg bg-gray-700 text-white p-4 my-10">
                 <h1 className="text-3xl md:text-6xl">
                   Our Services and Requirements
                 </h1>
@@ -62,23 +161,6 @@ const ServicePage: NextPage = () => {
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              <div className="mt-10 flex items-center space-x-4">
-                <a
-                  target="_blank"
-                  href="https://wa.me/+923008089934"
-                  className="px-8 py-4 flex items-center space-x-2 bg-green-600 hover:bg-green-700 transition text-white rounded-lg"
-                >
-                  <span className="inline-block">Contact me on</span>
-                  <BsWhatsapp />
-                </a>
-                <Link
-                  href="/contact"
-                  className="px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition"
-                >
-                  Email me
-                </Link>
               </div>
             </div>
           </div>
