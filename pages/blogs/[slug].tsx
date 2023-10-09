@@ -75,7 +75,7 @@ const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
             <div className="flex items-center justify-center">
               <div
-                className="w-full prose-lg"
+                className="w-full prose-lg prose-a:text-white prose-a:underline prose-a:p-1 prose-a:bg-gray-900 prose-a:rounded"
                 dangerouslySetInnerHTML={{ __html: blog!.content }}
               />
             </div>
