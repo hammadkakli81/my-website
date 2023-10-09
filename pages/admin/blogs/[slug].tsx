@@ -22,8 +22,15 @@ const Update: NextPage<Props> = ({ blog }) => {
     const html = document.querySelector('html');
     html && (html.style.fontSize = '100%');
 
+    const darkmode = document.getElementById('darkmode');
+    darkmode?.classList.remove('light');
+    darkmode?.classList.add('dark');
+
     return () => {
       html && (html.style.fontSize = '62.5%');
+
+      darkmode?.classList.remove('dark');
+      darkmode?.classList.add('light');
     };
   }, []);
 

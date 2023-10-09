@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { validateLink } from '../editor-utils';
 
 export type LinkOption = { url: string; openInNewTab: boolean };
