@@ -16,7 +16,7 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
       ({ slug }): ISitemapField => ({
         loc: `${
           process.env.SITE_URL || 'https://hammadkakli.com'
-        }/blogs/${slug}`,
+        }/blogs/${slug.toLowerCase()}`,
         lastmod: new Date().toISOString(),
         priority: 0.7,
         changefreq:'daily'
@@ -26,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
       ({ slug }): ISitemapField => ({
         loc: `${
           process.env.SITE_URL || 'https://hammadkakli.com'
-        }/trainings/${slug}`,
+        }/trainings/${slug.toLowerCase()}`,
         lastmod: new Date().toISOString(),
         priority: 0.7,
         changefreq:'daily'
@@ -36,7 +36,7 @@ export const getServerSideProps: GetServerSideProps = async ctx => {
       ({ slug }): ISitemapField => ({
         loc: `${
           process.env.SITE_URL || 'https://hammadkakli.com'
-        }/services/${slug}`,
+        }/services/${slug.toLowerCase()}`,
         lastmod: new Date().toISOString(),
         priority: 0.7,
         changefreq:'daily'
