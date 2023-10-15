@@ -25,7 +25,7 @@ const ServiceCard: FC<Props> = ({ service, index, updateServices }) => {
     updateServices(prevState => {
       const currSer = prevState[index];
       currSer.name = currentService.name;
-      currSer.slug = slugify(currSer.name);
+      currSer.slug = slugify(currSer.name.toLowerCase());
 
       prevState.splice(index, 1, currSer);
       return [...prevState];
