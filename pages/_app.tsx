@@ -13,7 +13,15 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="google-site-verification" content="BIWOnKCMOqqtffgmv_EVJHSP02dzhw-glqcfnTBAX30" />
+        <meta
+          name="google-site-verification"
+          content="BIWOnKCMOqqtffgmv_EVJHSP02dzhw-glqcfnTBAX30"
+        />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4518238468475571"
+          crossorigin="anonymous"
+        ></script>
       </Head>
       <div id="darkmode" className="light">
         <NotificationContextProvider>
