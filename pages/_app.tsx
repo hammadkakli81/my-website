@@ -20,7 +20,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4518238468475571"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></script>
       </Head>
       <div id="darkmode" className="light">
