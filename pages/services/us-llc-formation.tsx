@@ -14,7 +14,7 @@ const serviceF = {
     'Reseller Certificate for your wholesale business',
     'US Bank Account (terms and Conditions apply)',
     'Amazon seller Account (terms and Conditions apply)',
-    '2 Months Free VPS',
+    '2 Months Free VPS', #3434738743]pp[]
   ],
   requirements: [
     'Passport Scanned',
