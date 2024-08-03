@@ -1,6 +1,7 @@
 import '../styles/main.scss';
 import { AppProps } from 'next/app';
 import { Fragment } from 'react';
+import Script from 'next/script';
 import Head from 'next/head';
 import { SessionProvider } from 'next-auth/react';
 import { NotificationContextProvider } from '../contexts/notification-context';
@@ -9,6 +10,11 @@ import { NotificationContextProvider } from '../contexts/notification-context';
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <Fragment>
+      <Script
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4518238468475571"
+        strategy="afterInteractive" // or "beforeInteractive" or "lazyOnload" based on your needs
+        crossOrigin="anonymous"
+      />
       <Head>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -17,11 +23,6 @@ const App = ({ Component, pageProps }: AppProps) => {
           name="google-site-verification"
           content="BIWOnKCMOqqtffgmv_EVJHSP02dzhw-glqcfnTBAX30"
         />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4518238468475571"
-          crossOrigin="anonymous"
-        ></script>
       </Head>
       <div id="darkmode" className="light">
         <NotificationContextProvider>
