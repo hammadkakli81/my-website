@@ -82,7 +82,7 @@ const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
             <div className="pt-5">
               <div className="rounded border-2 border-secondary-dark p-2">
-                <h2 className="font-bold underline mb-2">Author</h2>
+                <h2 className="font-bold underline mb-2">Admin</h2>
 
                 <div className="flex items-start">
                   <div className="w-12">
