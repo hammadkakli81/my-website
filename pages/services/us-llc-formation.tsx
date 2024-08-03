@@ -24,7 +24,8 @@ const serviceF = {
 };
 
 const options = {
-  Texas: 700,
+  'New York': 550,
+  Texas: 750,
   Florida: 550,
   Wyoming: 550,
   Delaware: 550,
