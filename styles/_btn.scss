@@ -1,0 +1,126 @@
+@import './sass-variables';
+
+.btn {
+  // for <button>
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 30px;
+  // we should always add this, if we add height, margin or padding
+  display: inline-block;
+  border-radius: 2px;
+  font-size: var(--default-font-size);
+
+  // change for the <button> element
+  border: none;
+  cursor: pointer;
+
+  transition: transform 0.2s ease-out;
+
+  &:hover {
+    outline: none;
+    transform: translateY(-3px);
+    // x-axis, y-axis, blur, color
+    box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+  }
+
+  &:focus {
+    outline: 4px solid var(--color-primary-light);
+    outline-offset: 3px;
+    transform: translateY(-3px);
+    // x-axis, y-axis, blur, color
+    box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+  }
+
+  &:active {
+    outline: none;
+    // always related to the initial link state
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
+  }
+
+  &--primary {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    margin-right: 20px;
+    // this button looks a little bit small
+    // so add the same border that the next one has
+    border: 2px solid var(--color-primary);
+    transition: all 0.2s ease-out;
+
+    @include respond(phone) {
+      margin-right: 0;
+      margin-bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &--secondary {
+    // background-color: rgba($color: $color_primary, $alpha: 0.01);
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+
+    &__featured_services {
+      background-color: var(--color-primary);
+      color: var(--color-background);
+    }
+
+    @include respond(phone) {
+      margin-right: 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &--tertiary {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 0.7rem 1.5rem;
+
+    &-white {
+      background-color: var(--color-background);
+      color: var(--color-primary);
+    }
+  }
+
+  &__arrow {
+    display: inline-block;
+    transform: translateY(-1px);
+    transition: all 0.3s;
+  }
+
+  &:hover &__arrow {
+    transform: translateY(-1px) translateX(5px);
+  }
+}
+
+.btn-admin {
+  height: 50px;
+  padding: 1.8rem 3rem;
+  border: none;
+  background-color: var(--color-admin);
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    background-color: var(--color-admin-dark);
+  }
+}
+
+.btn-logout {
+  font-size: 14px;
+  padding: 7px 10px;
+  background-color: var(--color-danger);
+  color: var(--color-background);
+}

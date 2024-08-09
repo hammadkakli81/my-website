@@ -1,0 +1,31 @@
+@import '../styles/mixins';
+
+.about {
+  padding: 10rem 0;
+
+  @include respond(phone) {
+    padding: 0;
+  }
+
+  &__image_container {
+    width: 50%;
+    margin: auto;
+
+    @include respond(tab-land) {
+      width: 70%;
+    }
+
+    @include respond(tab-port) {
+      width: 65%;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

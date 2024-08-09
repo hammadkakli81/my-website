@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+// universal selector will apply on every element, every element should have box-size property border-box that is inherited from body
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+/*custom scroll css*/
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* Handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(202, 181, 226);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// root font-size is set in html selector
+html {
+  // 1rem == 10px (if browser-root is 16px)
+  font-size: 62.5%; // (10/16 x 100) percentage of 10 from 16
+
+  @include respond(phone) {
+    font-size: 58%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  background-color: var(--color-background);
+  columns: var(--color-grey-dark);
+}
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  outline: 1px solid var(--color-primary-light);
+}
+
+.container {
+  max-width: 120rem;
+  padding: 0 2rem;
+  margin: auto;
+}
+
+.container-small {
+  max-width: 60rem;
+  padding: 0 40px;
+  margin: auto;
+
+  @include respond(phone) {
+    padding: 30px;
+  }
+}
+
+pre {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  overflow-x: auto;
+}

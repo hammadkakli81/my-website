@@ -1,0 +1,50 @@
+.services {
+  background-color: var(--color-primary-very-light);
+  color: var(--color-background);
+  padding: 5rem;
+
+  .content {
+    width: 75%;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 34px;
+    margin-bottom: 2rem;
+  }
+
+  .actions_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .actions {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .save {
+    width: 120px;
+  }
+
+  .cancel {
+    width: 120px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--color-background);
+    background-color: var(--color-danger);
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      background-color: rgb(128, 48, 48);
+    }
+  }
+}
