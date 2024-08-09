@@ -64,9 +64,13 @@ const Cart: React.FC = () => {
                     onClick={async () => {
                       setLoading(true);
                       try {
-                        const { session } = (await axios.post('/api/checkout', {
+                        const {
+                          data: { session },
+                        } = (await axios.post('/api/checkout', {
                           products: cartItems,
                         })) as any;
+
+                        console.log(session);
 
                         const stripe = await getStripe();
                         void stripe?.redirectToCheckout({
