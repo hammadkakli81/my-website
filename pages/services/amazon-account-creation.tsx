@@ -3,8 +3,16 @@ import Head from 'next/head';
 import Layout from '../../components/layout/layout';
 import { BsWhatsapp } from 'react-icons/bs';
 import Link from 'next/link';
+import { useCart } from '@/contexts/cart-context';
+import { useContext } from 'react';
+import NotificationContext from '@/contexts/notification-context';
+
+const PRICE = 100; // IN USD
 
 const ServicePage: NextPage = () => {
+  const cart = useCart();
+  const notification = useContext(NotificationContext);
+
   return (
     <>
       <Head>
@@ -105,6 +113,24 @@ const ServicePage: NextPage = () => {
                   Email me
                 </Link>
               </div>
+            </div>
+
+            <div className="p-4 w-full flex items-center justify-end">
+              <button
+                onClick={() => {
+                  cart.addItemToCart({
+                    name: 'Amazon Account Creation',
+                    price: PRICE,
+                  });
+                  notification.showNotification({
+                    type: 'success',
+                    notificationText: 'Item added in cart',
+                  });
+                }}
+                className="my-2 p-4 rounded min-w-[50px] bg-green-900 text-white"
+              >
+                Price: ${PRICE} - Add to Cart
+              </button>
             </div>
           </div>
         </div>
