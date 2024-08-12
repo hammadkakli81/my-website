@@ -61,7 +61,7 @@ const ServicePage: NextPage = () => {
                   }}
                 >
                   {[
-                    'Passport',
+                    'Passport or CNIC (Chip Card)',
                     'Bank Statement',
                     'Credit Card',
                     'Address',
