@@ -1,4 +1,5 @@
 const fs = require('fs/promises');
+const prettier = require('prettier');
 const path = require('path');
 
 const services = [
@@ -100,7 +101,7 @@ const services = [
   },
 ];
 
-const promises = services.map(service => {
+const promises = services.map(async service => {
   const html = `import { NextPage } from 'next';
     import Head from 'next/head';
     import Layout from '../../components/layout/layout';
@@ -148,15 +149,21 @@ const promises = services.map(service => {
     export default ServicePage;
     `;
 
+  const formattedHtml = await prettier.format(html, {
+    singleQuote: true,
+    arrowParens: 'avoid',
+    tabWidth: 2,
+  });
+
   return fs.writeFile(
     path.join(
       process.cwd(),
       'pages',
       'services',
-      `${service.slug.toLowerCase()}.tsx`
+      `${service.slug.toLowerCase()}.tsx`,
     ),
-    html,
-    'utf-8'
+    formattedHtml,
+    'utf-8',
   );
 });
 
