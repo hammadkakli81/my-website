@@ -31,13 +31,6 @@ const SingleTraining: FC<Props> = ({ training }) => {
     <div className={styles.single_training}>
       <h2 className={styles.single_training__heading}>{training.name}</h2>
 
-      <p className="paragraph">
-        <span style={{ fontWeight: 'bold' }}>Duration:</span> 2 months
-      </p>
-      <p className="paragraph">
-        <span style={{ fontWeight: 'bold' }}>Class:</span> Once in a week
-      </p>
-
       <h3 className="heading-tertiary u-margin-top-small">
         What you will learn in this course
       </h3>
