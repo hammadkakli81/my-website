@@ -55,8 +55,8 @@ const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <Layout>
         <div className="py-5 md:py-20">
           <div className="container-small">
-            <div className="mb-14 sm:mb-10 bg-white/10 backdrop-blur-xl border border-white/20 pl-7 pr-2 py-3 sm:rounded-2xl scale-[1.183] sm:scale-100 shadow-lg">
-              <h1 className="font-extrabold text-xl md:text-4xl text-white">
+            <div className="mb-14 sm:mb-10 bg-white/70 backdrop-blur-xl border border-blue-200/30 pl-7 pr-2 py-3 sm:rounded-2xl scale-[1.183] sm:scale-100 shadow-lg">
+              <h1 className="font-extrabold text-xl md:text-4xl text-gray-800">
                 {blog!.title}
               </h1>
             </div>
@@ -75,14 +75,14 @@ const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
             <div className="flex items-center justify-center">
               <div
-                className="w-full prose-lg prose-a:text-white prose-a:underline prose-a:p-1 prose-a:bg-gray-900 prose-a:rounded"
+                className="w-full prose-lg prose-a:text-blue-600 prose-a:underline prose-a:p-1 prose-a:bg-blue-50 prose-a:rounded prose-a:hover:bg-blue-100 prose-headings:text-gray-800 prose-p:text-gray-700 prose-strong:text-gray-800 prose-li:text-gray-700"
                 dangerouslySetInnerHTML={{ __html: blog!.content }}
               />
             </div>
 
             <div className="pt-5">
-              <div className="rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-4 shadow-lg">
-                <h2 className="font-bold underline mb-2 text-white">Admin</h2>
+              <div className="rounded-2xl bg-white/70 backdrop-blur-xl border border-blue-200/30 p-4 shadow-lg">
+                <h2 className="font-bold underline mb-2 text-gray-800">Admin</h2>
 
                 <div className="flex items-start">
                   <div className="w-12">
@@ -97,10 +97,10 @@ const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                   </div>
 
                   <div className="ml-2 -mt-1 flex-1">
-                    <h4 className="font-semibold text-primary-dark dark:text-primary">
+                    <h4 className="font-semibold text-gray-800">
                       {blog.author.name}
                     </h4>
-                    <p className="text-primary-dark opacity-90 dark:text-primary">
+                    <p className="text-gray-700">
                       {blog.author.bio || 'No Bio'}
                     </p>
                   </div>
@@ -108,7 +108,7 @@ const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
               </div>
             </div>
 
-            <div className="pt-4 w-full flex items-center justify-between">
+            <div className="pt-4 w-full flex items-center justify-between text-gray-700">
               <div>
                 <span className="font-semibold">Created at: </span>
                 {dateformat(blog.createdAt, 'd-mmm-yyyy')}
@@ -120,7 +120,7 @@ const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </div>
 
             <div className="py-10">
-              <h2 className="text-4xl font-semibold underline translate-y-16">
+              <h2 className="text-4xl font-semibold underline translate-y-16 text-gray-800">
                 Comments
               </h2>
               <Comments postId={blog._id} />

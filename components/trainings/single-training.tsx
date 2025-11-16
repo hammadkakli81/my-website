@@ -49,7 +49,7 @@ const SingleTraining: FC<Props> = ({ training }) => {
             });
           }}
         >
-          <h3 className="paragraph paragraph--card">Expand all sections</h3>
+          <h3 className="paragraph">Expand all sections</h3>
         </button>
 
         <button
@@ -60,14 +60,14 @@ const SingleTraining: FC<Props> = ({ training }) => {
             );
           }}
         >
-          <h3 className="paragraph paragraph--card">Close all sections</h3>
+          <h3 className="paragraph">Close all sections</h3>
         </button>
 
         {mainDescriptions.map((desc, i) => {
           return (
             <div key={i}>
               <div className={styles.single_training__main_desc}>
-                <h2 className="paragraph paragraph--white">
+                <h2 className="paragraph">
                   {i + 1 + ': ' + desc}
                 </h2>
 

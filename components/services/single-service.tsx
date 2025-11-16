@@ -15,7 +15,7 @@ const SingleService: FC<SingleServiceProps> = (props): ReactElement => {
             {props.service.name}
           </h2>
 
-          <p className="paragraph paragraph--clear">{props.service.name}</p>
+          <p className="paragraph">{props.service.name}</p>
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ const BlogsPage: NextPage<Props> = ({ blogs }) => {
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-sky-500/10 to-yellow-500/10"></div>
           <div className="container relative z-10">
             <div className="py-16">
-              <h1 className="heading-secondary heading-secondary--white mb-10">
+              <h1 className="heading-secondary mb-10 text-gray-800">
                 Blogs
               </h1>
               <Blogs blogs={blogs} />
