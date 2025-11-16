@@ -29,13 +29,13 @@ const Blog: FC<{ blog: Blog; forAdmin?: boolean }> = ({ blog, forAdmin }) => {
       <div className="py-4 px-8 md:px-10 lg:px-14 mt-5 flex flex-col justify-between min-h-[230px]">
         <div>
           <Link href={`/blogs/${blog.slug}`}>
-            <p className="font-bold text-2xl hover:underline transition text-white">
+            <p className="font-bold text-2xl hover:underline transition text-gray-900">
               {blog.title.length >= 60
                 ? blog.title.substring(0, 60)
                 : blog.title}
             </p>
           </Link>
-          <p className="mt-3 text-xl text-white/90">{blog.meta}</p>
+          <p className="mt-3 text-xl text-gray-600">{blog.meta}</p>
         </div>
 
         <div className="mt-4 w-full flex justify-center">
