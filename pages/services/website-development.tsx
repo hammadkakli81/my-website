@@ -25,10 +25,69 @@ const ServicePage: NextPage = () => {
             <div className="max-w-4xl mx-auto">
               <div className="bg-white/70 backdrop-blur-xl border border-blue-200/30 rounded-3xl shadow-2xl overflow-hidden">
                 <header className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8">
-                  <h1 className="text-3xl md:text-6xl font-bold">Website Development</h1>
+                  <h1 className="text-3xl md:text-6xl font-bold">
+                    Website Development
+                  </h1>
                 </header>
 
                 <div className="p-8">
+                  {/* ---------------- CONTENT ADDED BELOW ---------------- */}
+
+                  <section className="mb-10">
+                    <h2 className="text-2xl font-bold mb-3 text-blue-700">
+                      Professional Website Development
+                    </h2>
+                    <p className="text-gray-700 leading-relaxed">
+                      I provide fully customized, high-performance website
+                      development services designed to help businesses build a
+                      strong online presence. Whether you need a portfolio,
+                      business site, landing page, or an advanced web
+                      application — I deliver fast, secure, and responsive
+                      websites built with modern technologies.
+                    </p>
+                  </section>
+
+                  <section className="mb-10">
+                    <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                      What’s Included?
+                    </h3>
+                    <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                      <li>
+                        Fully responsive website (mobile, tablet, desktop)
+                      </li>
+                      <li>Custom UI/UX design tailored to your brand</li>
+                      <li>SEO-optimized structure and content</li>
+                      <li>Fast-loading and high-performance pages</li>
+                      <li>Contact forms, live chat, pop-ups, integrations</li>
+                      <li>Secure hosting setup & deployment</li>
+                      <li>Unlimited revisions until you are satisfied</li>
+                    </ul>
+                  </section>
+
+                  <section className="mb-10">
+                    <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                      Technologies I Use
+                    </h3>
+                    <p className="text-gray-700">
+                      Next.js, React, Tailwind CSS, Node.js, WordPress, Shopify,
+                      Firebase, APIs, and more.
+                    </p>
+                  </section>
+
+                  <section className="mb-10">
+                    <h3 className="text-xl font-semibold mb-2 text-blue-600">
+                      Why Choose Me?
+                    </h3>
+                    <ul className="list-disc pl-6 text-gray-700 space-y-2">
+                      <li>Clean, optimized, and scalable code</li>
+                      <li>Modern UI design with smooth UX</li>
+                      <li>Fast delivery and professional communication</li>
+                      <li>100% satisfaction guarantee</li>
+                    </ul>
+                  </section>
+
+                  {/* ---------------- END CONTENT ---------------- */}
+
                   <div className="flex flex-wrap items-center gap-4 mb-6">
                     <a
                       target="_blank"
@@ -45,6 +104,7 @@ const ServicePage: NextPage = () => {
                       Email me
                     </Link>
                   </div>
+
                   <div className="p-4 w-full flex items-center justify-end">
                     <button
                       onClick={() => {
