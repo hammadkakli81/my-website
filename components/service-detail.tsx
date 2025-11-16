@@ -40,7 +40,7 @@ const ServiceDetail: React.FC<Props> = ({
         <div className="max-w-4xl mx-auto">
           <div className="bg-white/80 backdrop-blur-xl border border-blue-200/30 rounded-3xl shadow-2xl overflow-hidden">
             <header className="bg-gradient-to-r from-blue-600 to-sky-500 text-black p-8">
-              <h1 className="text-3xl md:text-4xl font-extrabold">{title}</h1>
+              <h1 className="text-3xl md:text-4xl text-black font-extrabold">{title}</h1>
             </header>
 
             <div className="p-8 space-y-6">
