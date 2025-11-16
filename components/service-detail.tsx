@@ -50,9 +50,7 @@ const ServiceDetail: React.FC<Props> = ({
 
               {features.length > 0 && (
                 <section>
-                  <h3 className="text-xl font-semibold mb-3">
-                    What you'll get
-                  </h3>
+                  <h3 className="text-xl font-semibold mb-3">What youll get</h3>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {features.map((f, idx) => (
                       <li
