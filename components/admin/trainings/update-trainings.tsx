@@ -22,17 +22,15 @@ const UpdateTrainings: FC<{ trainings: Training[] }> = ({ trainings }) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '1rem',
+            marginBottom: '2rem',
           }}
         >
           <h1>Update Trainings</h1>
           <button
             onClick={() => setShowCreateModal(true)}
-            style={{
-              transform: 'translateY(-8px)',
-              backgroundColor: 'white',
-              color: '#283045',
-            }}
-            className="btn"
+            className="btn btn--primary"
           >
             Create new Training
           </button>
