@@ -26,10 +26,13 @@ const ServicePage: NextPage = () => {
             <div className="max-w-4xl mx-auto">
               <div className="bg-white/70 backdrop-blur-xl border border-blue-200/30 rounded-3xl shadow-2xl overflow-hidden">
                 <header className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8">
-                  <h1 className="text-3xl md:text-6xl font-bold">ITIN Registration</h1>
+                  <h1 className="text-3xl md:text-6xl font-bold">
+                    ITIN Registration
+                  </h1>
                 </header>
 
-                <div className="p-8">
+                <div className="p-8 space-y-8">
+                  {/* Contact Buttons */}
                   <div className="flex flex-wrap items-center gap-4 mb-6">
                     <a
                       target="_blank"
@@ -39,6 +42,7 @@ const ServicePage: NextPage = () => {
                       <span className="inline-block">Contact me on</span>
                       <BsWhatsapp />
                     </a>
+
                     <Link
                       href="/contact"
                       className="px-8 py-4 bg-white/80 backdrop-blur-md border border-blue-200/30 text-gray-800 rounded-xl hover:bg-white/90 transition shadow-lg hover:shadow-xl"
@@ -47,6 +51,96 @@ const ServicePage: NextPage = () => {
                     </Link>
                   </div>
 
+                  {/* -------- NEW CONTENT START -------- */}
+                  <section className="space-y-4 text-gray-700 leading-relaxed">
+                    <h2 className="text-2xl font-bold text-blue-700">
+                      Get Your ITIN Registered Professionally & Hassle-Free
+                    </h2>
+                    <p>
+                      An ITIN (Individual Taxpayer Identification Number) is
+                      essential for non-US residents who want to do business in
+                      the United States, pay taxes, open merchant accounts,
+                      operate on eCommerce platforms, or receive U.S. payments.
+                      My service ensures a smooth, accurate, and fast
+                      application — prepared according to IRS requirements.
+                    </p>
+
+                    <h3 className="text-xl font-semibold text-blue-600">
+                      🔎 What’s Included
+                    </h3>
+                    <ul className="list-disc pl-6 space-y-2">
+                      <li>
+                        <strong>Eligibility Check:</strong> Assessment to ensure
+                        you qualify for an ITIN.
+                      </li>
+                      <li>
+                        <strong>Document Preparation:</strong> Complete
+                        preparation of Form W-7 and supporting documents.
+                      </li>
+                      <li>
+                        <strong>Identity Verification Guidance:</strong>{' '}
+                        Guidance on passports, certified copies, and
+                        notarization.
+                      </li>
+                      <li>
+                        <strong>IRS Filing Assistance:</strong> Submission via
+                        the correct method (mail / acceptance agent).
+                      </li>
+                      <li>
+                        <strong>Tracking & Updates:</strong> Regular updates on
+                        application progress.
+                      </li>
+                      <li>
+                        <strong>Professional Support:</strong> Assistance with
+                        any IRS queries or document follow-ups.
+                      </li>
+                    </ul>
+
+                    <h3 className="text-xl font-semibold text-blue-600">
+                      📄 Required Documents
+                    </h3>
+                    <ul className="list-disc pl-6 space-y-2">
+                      <li>Passport (preferred single document)</li>
+                      <li>
+                        Supporting reason for ITIN (e.g., LLC, Amazon, Stripe,
+                        U.S. tax filing)
+                      </li>
+                      <li>Any additional ID documents (if needed)</li>
+                    </ul>
+
+                    <h3 className="text-xl font-semibold text-blue-600">
+                      ⏳ Processing Time
+                    </h3>
+                    <p>
+                      ITIN approval typically takes <strong>6–12 weeks</strong>,
+                      depending on IRS workload.
+                    </p>
+
+                    <h3 className="text-xl font-semibold text-blue-600">
+                      🎯 Who Is This Service For?
+                    </h3>
+                    <ul className="list-disc pl-6 space-y-2">
+                      <li>Non-US residents starting a US-based business.</li>
+                      <li>Amazon, eBay, Walmart, Etsy, or Shopify sellers.</li>
+                      <li>
+                        Freelancers and service providers receiving US payments.
+                      </li>
+                      <li>LLC owners needing to file taxes.</li>
+                    </ul>
+
+                    <h3 className="text-xl font-semibold text-blue-600">
+                      📦 Deliverables
+                    </h3>
+                    <ul className="list-disc pl-6 space-y-2">
+                      <li>Completed and error-free ITIN application.</li>
+                      <li>Properly compiled IRS submission package.</li>
+                      <li>Guidance throughout the entire process.</li>
+                      <li>Full support until ITIN is issued.</li>
+                    </ul>
+                  </section>
+                  {/* -------- NEW CONTENT END -------- */}
+
+                  {/* Add to Cart */}
                   <div className="p-4 w-full flex items-center justify-end">
                     <button
                       onClick={() => {

@@ -25,11 +25,15 @@ const ServicePage: NextPage = () => {
           <div className="container relative z-10">
             <div className="max-w-4xl mx-auto">
               <div className="bg-white/70 backdrop-blur-xl border border-blue-200/30 rounded-3xl shadow-2xl overflow-hidden">
+                {/* HEADER */}
                 <header className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8">
-                  <h1 className="text-3xl md:text-6xl font-bold">Domain and Hosting</h1>
+                  <h1 className="text-3xl md:text-6xl font-bold">
+                    Domain and Hosting
+                  </h1>
                 </header>
 
                 <div className="p-8">
+                  {/* CONTACT BUTTONS */}
                   <div className="flex flex-wrap items-center gap-4 mb-6">
                     <a
                       target="_blank"
@@ -39,6 +43,7 @@ const ServicePage: NextPage = () => {
                       <span className="inline-block">Contact me on</span>
                       <BsWhatsapp />
                     </a>
+
                     <Link
                       href="/contact"
                       className="px-8 py-4 bg-white/80 backdrop-blur-md border border-blue-200/30 text-gray-800 rounded-xl hover:bg-white/90 transition shadow-lg hover:shadow-xl"
@@ -47,6 +52,60 @@ const ServicePage: NextPage = () => {
                     </Link>
                   </div>
 
+                  {/* SHORT DESCRIPTION */}
+                  <section className="mb-8">
+                    <h2 className="text-2xl font-bold mb-3 text-gray-800">
+                      Service Overview
+                    </h2>
+                    <p className="text-gray-700 leading-relaxed">
+                      Get fast, secure, and reliable domain and hosting setup
+                      for your business. I assist you in choosing the right
+                      domain, configuring hosting, and ensuring your website
+                      performs smoothly with optimized server settings and
+                      security configurations.
+                    </p>
+                  </section>
+
+                  {/* FEATURES */}
+                  <section className="mb-8">
+                    <h2 className="text-2xl font-bold mb-3 text-gray-800">
+                      Key Features
+                    </h2>
+                    <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                      <li>
+                        Assistance in selecting a professional domain name
+                      </li>
+                      <li>Domain purchase & DNS configuration</li>
+                      <li>
+                        Hosting setup on top providers (Hostinger, Namecheap,
+                        Bluehost, etc.)
+                      </li>
+                      <li>SSL certificate installation</li>
+                      <li>Email hosting setup (business emails)</li>
+                      <li>Performance optimization & caching setup</li>
+                      <li>Basic website security configuration</li>
+                      <li>Free guidance on future upgrades</li>
+                    </ul>
+                  </section>
+
+                  {/* DELIVERABLES */}
+                  <section className="mb-8">
+                    <h2 className="text-2xl font-bold mb-3 text-gray-800">
+                      What You Will Receive
+                    </h2>
+                    <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                      <li>Domain purchased and fully connected</li>
+                      <li>Hosting account configured</li>
+                      <li>Website live and accessible worldwide</li>
+                      <li>SSL certificate activated</li>
+                      <li>Professional business email (if hosting allows)</li>
+                      <li>Control panel access + documentation</li>
+                      <li>Speed and security setup (basic level)</li>
+                      <li>24-hour post-delivery support</li>
+                    </ul>
+                  </section>
+
+                  {/* ADD TO CART */}
                   <div className="p-4 w-full flex items-center justify-end">
                     <button
                       onClick={() => {
