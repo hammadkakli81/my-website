@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import slugify from 'slugify';
 
 const commonInput =
-  'w-full rounded border-2 border-secondary-dark bg-transparent p-2 text-primary-dark outline-none transition focus:border-primary-dark dark:text-primary dark:focus:border-primary';
+  'w-full rounded-xl border border-blue-200/30 bg-white/80 backdrop-blur-sm p-3 text-gray-800 outline-none transition focus:border-blue-400 focus:bg-white placeholder:text-gray-400';
 
 export type SeoResult = { slug: string; tags: string; meta: string };
 
@@ -60,7 +60,7 @@ const SeoForm: FC<Props> = ({ title, initialValue, onChange }) => {
 
   return (
     <div className="space-y-4">
-      <h1 className="text-xl font-semibold text-primary-dark dark:text-primary">
+      <h1 className="text-xl font-semibold text-gray-800">
         SEO Section
       </h1>
 
@@ -68,7 +68,7 @@ const SeoForm: FC<Props> = ({ title, initialValue, onChange }) => {
         label="Slug:"
         name="slug"
         placeholder="slug-goes-here"
-        className="pl-12 italic"
+        className="pl-16 italic"
         value={seoFormState.slug}
         onChange={onChangeHandler}
       />
@@ -77,7 +77,7 @@ const SeoForm: FC<Props> = ({ title, initialValue, onChange }) => {
         label="Tags:"
         name="tags"
         placeholder="React, Next JS"
-        className="pl-12"
+        className="pl-16"
         value={seoFormState.tags}
         onChange={onChangeHandler}
       />
@@ -85,12 +85,12 @@ const SeoForm: FC<Props> = ({ title, initialValue, onChange }) => {
       <div className="relative">
         <textarea
           name="meta"
-          className={classNames(commonInput, 'h-20 resize-none text-lg')}
+          className={classNames(commonInput, 'h-24 resize-none text-base pr-16')}
           placeholder="Meta Description: 150 characters will be fine."
           value={seoFormState.meta}
           onChange={onChangeHandler}
         />
-        <p className="absolute bottom-3 right-3 text-sm text-primary-dark dark:text-primary">
+        <p className="absolute bottom-3 right-3 text-sm text-gray-600 font-medium">
           {seoFormState.meta.length}/150
         </p>
       </div>
@@ -108,7 +108,7 @@ const Input: FC<{
 }> = ({ className, name, value, placeholder, label, onChange }) => {
   return (
     <label className="relative block">
-      <span className="absolute top-1/2 -translate-y-1/2 pl-2 text-sm font-semibold text-primary-dark dark:text-primary">
+      <span className="absolute top-1/2 -translate-y-1/2 left-3 text-sm font-semibold text-gray-700 z-10">
         {label}
       </span>
 

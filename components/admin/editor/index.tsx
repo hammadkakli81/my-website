@@ -153,8 +153,8 @@ const Editor: FC<Props> = ({ initialValue, btnTitle, busy, onSubmit }) => {
 
   return (
     <>
-      <div className="bg-white/70 backdrop-blur-xl border border-blue-200/30 rounded-2xl p-6 shadow-lg">
-        <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md py-3 rounded-xl mb-4">
+      <div className="bg-white/70 backdrop-blur-xl border border-blue-200/30 rounded-2xl p-4 md:p-6 shadow-lg overflow-hidden">
+        <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md py-3 rounded-xl mb-4 px-2">
           {/* Thumbnail Selector and Submit */}
           <div className="mb-3 flex items-center justify-between flex-wrap gap-4">
             <ThumbnailSelector
@@ -180,7 +180,7 @@ const Editor: FC<Props> = ({ initialValue, btnTitle, busy, onSubmit }) => {
           {/* Title Input */}
           <input
             type="text"
-            className="mb-3 w-full border border-blue-200/30 bg-white/80 backdrop-blur-sm rounded-xl px-4 py-3 text-3xl font-semibold text-gray-800 outline-none focus:border-blue-400 focus:bg-white transition placeholder:text-gray-400"
+            className="mb-3 w-full border border-blue-200/30 bg-white/80 backdrop-blur-sm rounded-xl px-4 py-3 text-2xl md:text-3xl font-semibold text-gray-800 outline-none focus:border-blue-400 focus:bg-white transition placeholder:text-gray-400"
             placeholder="Title"
             value={post.title}
             onChange={({ target: { value: title } }) =>
@@ -188,25 +188,29 @@ const Editor: FC<Props> = ({ initialValue, btnTitle, busy, onSubmit }) => {
             }
           />
 
-          <ToolBar
-            editor={editor}
-            onOpenImageClick={() => setShowGallery(true)}
-          />
+          <div className="overflow-x-auto">
+            <ToolBar
+              editor={editor}
+              onOpenImageClick={() => setShowGallery(true)}
+            />
+          </div>
 
           <div className="my-3 h-[1px] w-full bg-blue-200/30" />
         </div>
 
-        {editor && <EditLink editor={editor} />}
+        <div className="px-2">
+          {editor && <EditLink editor={editor} />}
 
-        <EditorContent editor={editor} className="min-h-[300px] prose prose-headings:text-gray-800 prose-p:text-gray-700 prose-strong:text-gray-800 prose-a:text-blue-600" />
+          <EditorContent editor={editor} className="min-h-[300px] prose prose-headings:text-gray-800 prose-p:text-gray-700 prose-strong:text-gray-800 prose-a:text-blue-600 max-w-full overflow-x-auto" />
 
-        <div className="my-3 h-[1px] w-full bg-blue-200/30" />
+          <div className="my-3 h-[1px] w-full bg-blue-200/30" />
 
-        <SeoForm
-          title={post.title}
-          onChange={handleSeoChange}
-          initialValue={seoInitialValue}
-        />
+          <SeoForm
+            title={post.title}
+            onChange={handleSeoChange}
+            initialValue={seoInitialValue}
+          />
+        </div>
       </div>
 
       <GalleryModal

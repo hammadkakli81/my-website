@@ -33,10 +33,10 @@ function Create() {
         <title>Create Blog | Hammad</title>
       </Head>
       <AdminLayout>
-        <div className="w-full min-h-screen p-10 relative">
+        <div className="w-full min-h-screen p-4 md:p-10 relative">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-sky-500/5 to-yellow-500/5"></div>
           <div className="relative z-10">
-            <div className="w-full max-w-[842px] mx-auto bg-white/70 backdrop-blur-xl border border-blue-200/30 rounded-3xl p-8 shadow-2xl">
+            <div className="w-full max-w-[842px] mx-auto">
               <Editor
                 btnTitle="Submit"
                 busy={uploading}

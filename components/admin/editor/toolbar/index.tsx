@@ -70,12 +70,12 @@ const ToolBar: FC<Props> = ({ editor, onOpenImageClick }) => {
   };
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center flex-wrap gap-2 min-w-max">
       <Dropdown options={options} head={<Head label={getLabel()} />} />
 
-      <div className="bg-secondary-dark dark:bg-secondary-light mx-8 h-4 w-[1px]" />
+      <div className="bg-blue-200/30 mx-2 md:mx-4 h-4 w-[1px]" />
 
-      <div className="flex items-center space-x-3">
+      <div className="flex items-center space-x-2 md:space-x-3">
         <ToolBarButton
           active={editor.isActive('bold')}
           onClick={() => getFocusedEditor(editor).toggleBold().run()}
@@ -105,9 +105,9 @@ const ToolBar: FC<Props> = ({ editor, onOpenImageClick }) => {
         </ToolBarButton>
       </div>
 
-      <div className="bg-secondary-dark dark:bg-secondary-light mx-8 h-4 w-[1px]" />
+      <div className="bg-blue-200/30 mx-2 md:mx-4 h-4 w-[1px]" />
 
-      <div className="flex items-center space-x-3">
+      <div className="flex items-center space-x-2 md:space-x-3">
         <ToolBarButton
           active={editor.isActive('blockquote')}
           onClick={() => getFocusedEditor(editor).toggleBlockquote().run()}
@@ -146,9 +146,9 @@ const ToolBar: FC<Props> = ({ editor, onOpenImageClick }) => {
         </ToolBarButton>
       </div>
 
-      <div className="bg-secondary-dark dark:bg-secondary-light mx-8 h-4 w-[1px]" />
+      <div className="bg-blue-200/30 mx-2 md:mx-4 h-4 w-[1px]" />
 
-      <div className="flex items-center space-x-3">
+      <div className="flex items-center space-x-2 md:space-x-3">
         <EmbedYoutube onSubmit={handleEmbedYoutube} />
 
         <ToolBarButton onClick={onOpenImageClick}>
@@ -161,7 +161,7 @@ const ToolBar: FC<Props> = ({ editor, onOpenImageClick }) => {
 
 const Head: FC<{ label: string }> = ({ label }) => {
   return (
-    <div className="text-primary-dark dark:text-primary flex items-center space-x-2">
+    <div className="text-gray-800 flex items-center space-x-2">
       <p>{label}</p>
       <AiFillCaretDown />
     </div>
