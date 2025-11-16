@@ -7,31 +7,45 @@
   flex: 1;
   margin-right: 10px;
   min-height: 50px;
-  padding: 1rem 2rem;
-  background-color: var(--color-primary-light);
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 16px;
-  border-radius: 4px;
+  border-radius: 12px;
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+  transition: all 0.3s ease;
 
   &:not(:last-child) {
     margin-bottom: 1rem;
   }
 
+  &:hover {
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
+    transform: translateY(-2px);
+  }
+
   svg {
     cursor: pointer;
-    padding: 0.4rem;
+    padding: 0.6rem;
     margin: 0.4rem 0;
-    transition: all 0.2s ease-out;
-    border-radius: 4px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    color: var(--text-primary);
 
     &:not(:last-child) {
       margin-right: 0.5rem;
     }
 
     &:hover {
-      background-color: var(--color-primary-very-light);
+      background: rgba(59, 130, 246, 0.1);
+      transform: scale(1.1);
     }
   }
 
@@ -39,23 +53,29 @@
     height: 40px;
     width: 50%;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
-    border: none;
+    border-radius: 8px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
     outline: none;
-    background-color: var(--color-primary);
-    border: 2px solid rgb(94, 196, 255);
+    background: rgba(255, 255, 255, 0.9);
     font-size: 1.6rem;
-    color: var(--color-background);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: rgba(59, 130, 246, 0.5);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
   }
 
   .update_actions {
     padding: 0.7rem 2rem;
     border: none;
     font: inherit;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    transition: all 0.2s ease-out;
+    transition: all 0.3s ease;
+    font-weight: 600;
 
     &:not(:last-child) {
       margin-right: 1rem;
@@ -63,20 +83,24 @@
   }
 
   .update_action_save {
-    background-color: rgb(94, 196, 255);
-    color: var(--color-primary);
+    background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 
     &:hover {
-      background-color: rgb(111, 154, 179);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
     }
   }
 
   .update_action_cancel {
-    background-color: var(--color-danger);
-    color: var(--color-background);
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: var(--color-white);
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
 
     &:hover {
-      background-color: darken(#e23030, 8);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
     }
   }
 }
@@ -84,17 +108,20 @@
 .add {
   width: 55px;
   height: 55px;
-  border-radius: 4px;
-  background-color: rgb(94, 196, 255);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
   cursor: pointer;
-  transition: all 0.2s ease-out;
+  transition: all 0.3s ease;
   border: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  color: var(--color-white);
 
   &:hover {
-    background-color: rgb(111, 154, 179);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
   }
 }
 

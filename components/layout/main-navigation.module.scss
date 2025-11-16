@@ -38,6 +38,8 @@
   &__nav_list {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   &__btn_container {
@@ -64,7 +66,7 @@
         display: inline-block;
         width: 35px;
         height: 3px;
-        background-color: var(--color-white);
+        background-color: var(--text-primary);
         border-radius: 50px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       }

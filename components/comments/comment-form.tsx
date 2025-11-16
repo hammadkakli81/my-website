@@ -44,13 +44,13 @@ const CommentForm: FC<Props> = ({
   return (
     <div>
       {!!title && (
-        <h1 className="py-3 text-xl font-semibold text-primary-dark dark:text-primary">
+        <h1 className="py-3 text-xl font-semibold text-gray-800">
           {title}
         </h1>
       )}
       <EditorContent
         onClick={() => getFocusedEditor(editor!).run()}
-        className="min-h-[100px] cursor-text rounded border-[1px] border-secondary-dark p-2"
+        className="min-h-[100px] cursor-text rounded-xl border border-blue-200/30 bg-white/80 backdrop-blur-sm p-4 focus-within:border-blue-400 focus-within:bg-white transition"
         editor={editor}
       />
 
@@ -65,7 +65,7 @@ const CommentForm: FC<Props> = ({
           {!!onClose && (
             <button
               onClick={onClose}
-              className="text-primary-dark dark:text-primary"
+              className="px-4 py-2 rounded-xl bg-white/80 backdrop-blur-md border border-blue-200/30 text-gray-700 hover:bg-white/90 transition"
             >
               Close
             </button>

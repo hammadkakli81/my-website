@@ -92,14 +92,16 @@ const Comments: FC<Props> = ({ postId }) => {
   return (
     <div className="space-y-8 py-20">
       {user ? (
-        <CommentForm
-          onSubmit={handleNewCommentSubmit}
-          busy={creating}
-          title="Add comment"
-        />
+        <div className="bg-white/70 backdrop-blur-xl border border-blue-200/30 rounded-2xl p-6 shadow-lg">
+          <CommentForm
+            onSubmit={handleNewCommentSubmit}
+            busy={creating}
+            title="Add comment"
+          />
+        </div>
       ) : (
-        <div className="flex flex-col items-end space-y-2">
-          <h3 className="text-xl font-semibold text-secondary-dark">
+        <div className="bg-white/70 backdrop-blur-xl border border-blue-200/30 rounded-2xl p-6 shadow-lg flex flex-col items-end space-y-2">
+          <h3 className="text-xl font-semibold text-gray-800">
             Log in to add your comment
           </h3>
           <GoogleAuthButton />
@@ -111,8 +113,8 @@ const Comments: FC<Props> = ({ postId }) => {
           {comments.map(comment => (
             <div
               className={classNames(
-                'rounded border-[1px] border-secondary-dark p-4',
-                comment.new ? 'bg-gray-300 dark:bg-neutral-700' : ''
+                'rounded-2xl border border-blue-200/30 p-6 bg-white/70 backdrop-blur-xl shadow-lg',
+                comment.new ? 'bg-blue-50/70 border-blue-300/50' : ''
               )}
               key={comment.id}
             >
@@ -138,14 +140,14 @@ const Comments: FC<Props> = ({ postId }) => {
                 <div className="ml-auto mt-3 w-[95%] space-y-3">
                   {comment.replies.length ? (
                     <>
-                      <h3 className="mb-3 font-semibold text-secondary-dark underline dark:text-secondary-light">
+                      <h3 className="mb-3 font-semibold text-gray-800 underline">
                         Replies
                       </h3>
                       {comment.replies.map((reply: any) => (
                         <div
                           className={classNames(
-                            'rounded border-[1px] border-secondary-dark p-4',
-                            reply.new ? 'bg-gray-300 dark:bg-neutral-700' : ''
+                            'rounded-2xl border border-blue-200/30 p-4 bg-white/60 backdrop-blur-md',
+                            reply.new ? 'bg-blue-50/60 border-blue-300/50' : ''
                           )}
                           key={reply.id}
                         >
@@ -158,7 +160,7 @@ const Comments: FC<Props> = ({ postId }) => {
                       ))}
                     </>
                   ) : (
-                    <h3 className="mb-3 inline-block rounded bg-secondary-dark px-2 py-1 font-semibold text-secondary-light dark:bg-secondary-light dark:only:text-secondary-dark">
+                    <h3 className="mb-3 inline-block rounded-xl bg-blue-50/70 border border-blue-200/30 px-4 py-2 font-semibold text-gray-700">
                       There are no replies to this comment.
                     </h3>
                   )}
@@ -168,7 +170,7 @@ const Comments: FC<Props> = ({ postId }) => {
           ))}
         </>
       ) : (
-        <h3 className="mb-3 inline-block rounded bg-secondary-dark px-2 py-1 text-2xl font-semibold text-primary dark:bg-secondary-light dark:text-primary-dark">
+        <h3 className="mb-3 inline-block rounded-xl bg-white/70 backdrop-blur-xl border border-blue-200/30 px-4 py-2 text-2xl font-semibold text-gray-800 shadow-lg">
           There are no comments to this post
         </h3>
       )}

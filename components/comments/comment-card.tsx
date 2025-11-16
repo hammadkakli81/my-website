@@ -210,12 +210,12 @@ const CommentCard: FC<Props> = ({
       />
 
       <div className="flex-1">
-        <h1 className="text-lg font-semibold text-primary-dark dark:text-primary">
+        <h1 className="text-lg font-semibold text-gray-800">
           {comment.owner.name}
-          <span className="text-secondary-dark">
+          <span className="text-gray-600">
             {isAdmin && ` - ${comment.owner.email}`}{' '}
             {comment.owner.role === 'admin' && (
-              <span className="rounded bg-primary-dark px-1 text-primary dark:bg-primary dark:text-primary-dark">
+              <span className="rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 px-2 py-1 text-white text-sm ml-2">
                 Admin
               </span>
             )}
@@ -224,13 +224,13 @@ const CommentCard: FC<Props> = ({
 
         {comment.belongsTo !== null &&
           typeof comment.belongsTo !== 'string' && (
-            <div className="flex items-center font-semibold text-primary-dark transition dark:text-primary">
-              <span className="text-sm text-secondary-dark">
+            <div className="flex items-center font-semibold text-gray-700 transition">
+              <span className="text-sm text-gray-600">
                 commented on -
               </span>
 
               <Link
-                className="ml-2 flex items-center space-x-2 text-secondary-dark dark:text-primary"
+                className="ml-2 flex items-center space-x-2 text-blue-600 hover:text-blue-700"
                 href={`/${comment.belongsTo.slug}`}
                 target="_blank"
               >
@@ -242,12 +242,12 @@ const CommentCard: FC<Props> = ({
             </div>
           )}
 
-        <span className="text-sm text-secondary-dark">
+        <span className="text-sm text-gray-600">
           {dateFormat(comment.createdAt, 'd-mmm-yyyy')}
         </span>
-        <div className="prose dark:prose-invert">{parse(content)}</div>
+        <div className="prose prose-headings:text-gray-800 prose-p:text-gray-700 prose-strong:text-gray-800 prose-a:text-blue-600">{parse(content)}</div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 flex-wrap gap-2 mt-3">
           <LikeHeart
             liked={likedByCurrentUser}
             label={likes.length + ' likes'}
@@ -290,7 +290,7 @@ const CommentCard: FC<Props> = ({
         </div>
 
         {showForm && (
-          <div className="mt-3">
+          <div className="mt-3 bg-white/50 backdrop-blur-md rounded-xl p-4 border border-blue-200/30">
             <CommentForm
               btnTitle={formBtnTitle}
               onClose={hideForm}
@@ -313,7 +313,7 @@ const CCButton: FC<
     <button
       disabled={busy}
       onClick={onClick}
-      className="flex items-center space-x-2 text-primary-dark dark:text-primary"
+      className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium transition disabled:opacity-50 disabled:cursor-not-allowed"
     >
       {children}
     </button>

@@ -12,17 +12,7 @@ export interface NavLinkInterface {
   text: string;
 }
 
-let navLinks: NavLinkInterface[] = [
-  { href: '/about', text: 'About Me' },
-  { href: '/trainings', text: 'Trainings' },
-  { href: '/services', text: 'Services' },
-  { href: '/contact', text: 'Contact Me' },
-  { href: '/blogs', text: 'Blogs' },
-  { href: '/cart', text: 'Cart' },
-];
-
-// For Admin or Non-Admin users, they are different
-const navLinksResp: NavLinkInterface[] = [
+const defaultNavLinks: NavLinkInterface[] = [
   { href: '/about', text: 'About Me' },
   { href: '/trainings', text: 'Trainings' },
   { href: '/services', text: 'Services' },
@@ -42,21 +32,29 @@ const MainNavigation: FC = (): ReactElement => {
   const router = useRouter();
   const session = useSession();
 
+  // Determine nav links based on user role and current route
+  let navLinks: NavLinkInterface[] = [...defaultNavLinks];
+  let navLinksResp: NavLinkInterface[] = [...defaultNavLinks];
+
   if (
     session.status === 'authenticated' &&
     session.data?.user?.role === 'admin'
   ) {
-    navLinks = [
-      { href: '/admin/dashboard', text: 'Dashboard' },
-      { href: '/about', text: 'About Me' },
-      { href: '/trainings', text: 'Trainings' },
-      { href: '/services', text: 'Services' },
-      { href: '/blogs', text: 'Blogs' },
-      { href: '/contact', text: 'Contact Me' },
-    ];
-
     if (router.pathname.startsWith('/admin')) {
       navLinks = [{ href: '/admin/dashboard', text: 'Dashboard' }];
+      navLinksResp = [
+        { href: '/admin/dashboard', text: 'Dashboard' },
+        ...defaultNavLinks,
+      ];
+    } else {
+      navLinks = [
+        { href: '/admin/dashboard', text: 'Dashboard' },
+        ...defaultNavLinks.filter(link => link.href !== '/cart'),
+      ];
+      navLinksResp = [
+        { href: '/admin/dashboard', text: 'Dashboard' },
+        ...defaultNavLinks,
+      ];
     }
   }
 
