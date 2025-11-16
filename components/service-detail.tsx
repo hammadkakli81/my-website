@@ -39,7 +39,7 @@ const ServiceDetail: React.FC<Props> = ({
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white/80 backdrop-blur-xl border border-blue-200/30 rounded-3xl shadow-2xl overflow-hidden">
-            <header className="bg-gradient-to-r from-blue-600 to-sky-500 text-white p-8">
+            <header className="bg-gradient-to-r from-blue-600 to-sky-500 text-black p-8">
               <h1 className="text-3xl md:text-4xl font-extrabold">{title}</h1>
             </header>
 
@@ -80,7 +80,7 @@ const ServiceDetail: React.FC<Props> = ({
                   target="_blank"
                   rel="noreferrer"
                   href={`https://wa.me/${contactPhone.replace(/[+\s]/g, '')}`}
-                  className="px-6 py-3 flex items-center space-x-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition text-white rounded-lg shadow"
+                  className="px-6 py-3 flex items-center space-x-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition text-black rounded-lg shadow"
                 >
                   <span>Message on WhatsApp</span>
                   <BsWhatsapp />
@@ -96,7 +96,7 @@ const ServiceDetail: React.FC<Props> = ({
                 <div className="ml-auto flex items-center gap-3">
                   <button
                     onClick={addToCart}
-                    className="px-5 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-semibold shadow hover:opacity-95 transition"
+                    className="px-5 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-violet-600 text-black font-semibold shadow hover:opacity-95 transition"
                   >
                     {price > 0
                       ? `Price: $${price} - Add to cart`
