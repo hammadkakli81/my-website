@@ -48,7 +48,7 @@ const Cart: React.FC = () => {
                         <span>${item.price.toFixed(2)}</span>
                       </div>
                       <button
-                        className="ml-4 p-2 rounded-xl bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 transition-all shadow-lg hover:shadow-xl"
+                        className="ml-4 p-2 rounded-xl bg-gradient-to-r from-red-500 to-red-600 text-yellow-600 hover:from-red-600 hover:to-red-700 transition-all shadow-lg hover:shadow-xl"
                         onClick={() => removeItemFromCart(item.name)}
                       >
                         Remove
@@ -61,7 +61,7 @@ const Cart: React.FC = () => {
                   <h1 className="font-bold">Total: ${totalPrice.toFixed(2)}</h1>
 
                   <button
-                    className="bg-gradient-to-r from-green-500 to-green-600 text-white py-3 px-6 rounded-xl hover:from-green-600 hover:to-green-700 transition-all shadow-lg hover:shadow-xl font-semibold"
+                    className="bg-gradient-to-r from-green-500 to-green-600 text-yellow-600 py-3 px-6 rounded-xl hover:from-green-600 hover:to-green-700 transition-all shadow-lg hover:shadow-xl font-semibold"
                     onClick={async () => {
                       setLoading(true);
                       try {
