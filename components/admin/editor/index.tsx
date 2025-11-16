@@ -153,10 +153,10 @@ const Editor: FC<Props> = ({ initialValue, btnTitle, busy, onSubmit }) => {
 
   return (
     <>
-      <div className="bg-primary p-3 transition dark:bg-primary-dark">
-        <div className="sticky top-0 z-10 bg-primary py-3 dark:bg-primary-dark">
+      <div className="bg-white/70 backdrop-blur-xl border border-blue-200/30 rounded-2xl p-6 shadow-lg">
+        <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-md py-3 rounded-xl mb-4">
           {/* Thumbnail Selector and Submit */}
-          <div className="mb-3 flex items-center justify-between">
+          <div className="mb-3 flex items-center justify-between flex-wrap gap-4">
             <ThumbnailSelector
               onChange={updateThumbnail}
               initialValue={
@@ -180,7 +180,7 @@ const Editor: FC<Props> = ({ initialValue, btnTitle, busy, onSubmit }) => {
           {/* Title Input */}
           <input
             type="text"
-            className="mb-3 w-full border-0 border-b-[1px] border-secondary-dark bg-transparent py-2 text-3xl font-semibold italic text-primary-dark outline-none dark:border-secondary-light dark:text-primary"
+            className="mb-3 w-full border border-blue-200/30 bg-white/80 backdrop-blur-sm rounded-xl px-4 py-3 text-3xl font-semibold text-gray-800 outline-none focus:border-blue-400 focus:bg-white transition placeholder:text-gray-400"
             placeholder="Title"
             value={post.title}
             onChange={({ target: { value: title } }) =>
@@ -193,14 +193,14 @@ const Editor: FC<Props> = ({ initialValue, btnTitle, busy, onSubmit }) => {
             onOpenImageClick={() => setShowGallery(true)}
           />
 
-          <div className="my-3 h-[1px] w-full bg-secondary-dark dark:bg-secondary-light" />
+          <div className="my-3 h-[1px] w-full bg-blue-200/30" />
         </div>
 
         {editor && <EditLink editor={editor} />}
 
-        <EditorContent editor={editor} className="min-h-[300px]" />
+        <EditorContent editor={editor} className="min-h-[300px] prose prose-headings:text-gray-800 prose-p:text-gray-700 prose-strong:text-gray-800 prose-a:text-blue-600" />
 
-        <div className="my-3 h-[1px] w-full bg-secondary-dark dark:bg-secondary-light" />
+        <div className="my-3 h-[1px] w-full bg-blue-200/30" />
 
         <SeoForm
           title={post.title}
