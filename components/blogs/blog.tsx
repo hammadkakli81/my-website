@@ -11,7 +11,7 @@ const Blog: FC<{ blog: Blog; forAdmin?: boolean }> = ({ blog, forAdmin }) => {
 
   return (
     <div
-      className="max-w-[400px] bg-secondary-dark text-white rounded-lg overflow-hidden shadow-sm"
+      className="max-w-[400px] bg-white/10 backdrop-blur-xl border border-white/20 text-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:bg-white/15"
       key={blog.slug}
     >
       {blog.thumbnail && blog.thumbnail.src && (

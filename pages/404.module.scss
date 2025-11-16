@@ -1,17 +1,44 @@
 .not_found_page {
-  height: 60vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  padding: 10rem 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(251, 191, 36, 0.15) 100%);
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+  }
 
   &__content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 30px;
+    padding: 6rem 8rem;
+    box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.15);
   }
 
   &__text {
-    font-size: 4rem;
-    color: var(--color-primary);
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
   }
 }

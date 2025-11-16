@@ -15,8 +15,9 @@ const BlogsPage: NextPage<Props> = ({ blogs }) => {
         <title>All Blogs | Hammad</title>
       </Head>
       <Layout>
-        <div className="bg-primary-dark">
-          <div className="container">
+        <div className="relative min-h-[80vh] py-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-sky-500/10 to-yellow-500/10"></div>
+          <div className="container relative z-10">
             <div className="py-16">
               <h1 className="heading-secondary heading-secondary--white mb-10">
                 Blogs

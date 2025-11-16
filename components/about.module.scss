@@ -2,14 +2,33 @@
 
 .about {
   padding: 10rem 0;
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 0;
+  }
 
   @include respond(phone) {
-    padding: 0;
+    padding: 5rem 0;
   }
 
   &__image_container {
     width: 50%;
     margin: auto;
+    position: relative;
+    z-index: 1;
 
     @include respond(tab-land) {
       width: 70%;
@@ -26,6 +45,18 @@
     img {
       width: 100%;
       height: auto;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      padding: 2rem;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+      }
     }
   }
 }

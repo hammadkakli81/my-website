@@ -55,7 +55,7 @@ const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <Layout>
         <div className="py-5 md:py-20">
           <div className="container-small">
-            <div className="mb-14 sm:mb-10 bg-primary-dark pl-7 pr-2 py-3 sm:rounded-md scale-[1.183] sm:scale-100">
+            <div className="mb-14 sm:mb-10 bg-white/10 backdrop-blur-xl border border-white/20 pl-7 pr-2 py-3 sm:rounded-2xl scale-[1.183] sm:scale-100 shadow-lg">
               <h1 className="font-extrabold text-xl md:text-4xl text-white">
                 {blog!.title}
               </h1>
@@ -81,8 +81,8 @@ const BlogPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </div>
 
             <div className="pt-5">
-              <div className="rounded border-2 border-secondary-dark p-2">
-                <h2 className="font-bold underline mb-2">Admin</h2>
+              <div className="rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 p-4 shadow-lg">
+                <h2 className="font-bold underline mb-2 text-white">Admin</h2>
 
                 <div className="flex items-start">
                   <div className="w-12">

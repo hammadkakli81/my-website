@@ -2,19 +2,51 @@
 @import '../../styles/sass-variables';
 
 .hero {
-  padding: 7rem 0 7rem 0;
+  padding: 10rem 0 10rem 0;
   overflow: hidden;
-  border-bottom: 2px solid rgba($color: #000, $alpha: 0.2);
-  background-color: rgba($color: $color_primary, $alpha: 0.1);
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 0;
+  }
 
   &__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1;
 
     &_left {
       width: 58%;
       margin-right: 2rem;
+      position: relative;
+      z-index: 2;
 
       @include respond(tab-port) {
         width: 100%;
@@ -31,6 +63,7 @@
       justify-content: center;
       overflow: hidden;
       position: relative;
+      z-index: 1;
 
       @include respond(tab-land) {
         transform: scale(1.2) translateY(5.4rem);
@@ -44,16 +77,41 @@
 
   &__paragraph {
     width: 90%;
+    color: var(--text-primary);
   }
 
   &__image_container {
     height: 100%;
     width: 100%;
-
     position: absolute;
     bottom: 0;
-
     display: flex;
     justify-content: center;
+    
+    > div {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 30px 80px rgba(59, 130, 246, 0.2);
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
   }
 }

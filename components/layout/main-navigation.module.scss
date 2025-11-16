@@ -1,9 +1,22 @@
 @import '../../styles/mixins';
 
 .header {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+  color: var(--text-primary);
   height: 95px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 12px 48px 0 rgba(59, 130, 246, 0.15);
+  }
 
   &__content {
     padding: 30px 0 30px 0;
@@ -15,6 +28,7 @@
   &__navigation {
     display: flex;
     align-items: center;
+    gap: 2rem;
 
     @include respond(tab-land) {
       display: none;
@@ -23,6 +37,7 @@
 
   &__nav_list {
     display: flex;
+    gap: 1rem;
   }
 
   &__btn_container {
@@ -49,8 +64,9 @@
         display: inline-block;
         width: 35px;
         height: 3px;
-        background-color: var(--color-background);
+        background-color: var(--color-white);
         border-radius: 50px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
       }
 
       &::before,
@@ -58,7 +74,7 @@
         content: '';
         position: absolute;
         left: 0;
-        transition: all 0.2s ease-out;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
       &::before {
@@ -81,14 +97,14 @@
       &__active {
         &::before {
           top: 0;
-          transform: rotate(135deg); // 180deg - 45deg = 135deg
+          transform: rotate(135deg);
         }
       }
 
       &__active {
         &::after {
           top: 0;
-          transform: rotate(-135deg); // 180deg - 45deg = 135deg
+          transform: rotate(-135deg);
         }
       }
     }

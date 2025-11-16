@@ -27,12 +27,13 @@ const Cart: React.FC = () => {
         <title>Amazon Account Management | Hammad</title>
       </Head>
       <Layout>
-        <div className="px-10 py-[50px] w-full flex items-center justify-center">
-          <div className="text-4xl">
-            <h1 className="text-6xl mb-8">Your Cart</h1>
+        <div className="px-10 py-[50px] w-full flex items-center justify-center min-h-[80vh] relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-sky-500/10 to-yellow-500/10"></div>
+          <div className="text-4xl relative z-10 bg-white/70 backdrop-blur-xl border border-blue-200/30 rounded-3xl p-8 shadow-2xl max-w-4xl w-full">
+            <h1 className="text-6xl mb-8 text-gray-800 font-bold">Your Cart</h1>
             {cartItems.length === 0 ? (
               <div>
-                <p className="text-xl">Your cart is empty</p>
+                <p className="text-xl text-gray-700">Your cart is empty</p>
               </div>
             ) : (
               <>
@@ -40,14 +41,14 @@ const Cart: React.FC = () => {
                   {cartItems.map((item: any, index: number) => (
                     <li
                       key={index}
-                      className="flex items-center justify-between bg-gray-200 rounded p-4 mb-4"
+                      className="flex items-center justify-between bg-white/70 backdrop-blur-md border border-blue-200/30 rounded-2xl p-4 mb-4 text-gray-800 hover:bg-white/85 transition-all"
                     >
-                      <div>
+                      <div className="font-medium">
                         <span>{item.name}</span> -
                         <span>${item.price.toFixed(2)}</span>
                       </div>
                       <button
-                        className="ml-4 p-1 rounded bg-red-600 text-white"
+                        className="ml-4 p-2 rounded-xl bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 transition-all shadow-lg hover:shadow-xl"
                         onClick={() => removeItemFromCart(item.name)}
                       >
                         Remove
@@ -56,11 +57,11 @@ const Cart: React.FC = () => {
                   ))}
                 </ul>
 
-                <div className="flex items-center justify-between text-4xl mt-8">
-                  <h1>Total: ${totalPrice}</h1>
+                <div className="flex items-center justify-between text-4xl mt-8 text-gray-800">
+                  <h1 className="font-bold">Total: ${totalPrice.toFixed(2)}</h1>
 
                   <button
-                    className="bg-green-600 text-white py-2 px-3 rounded"
+                    className="bg-gradient-to-r from-green-500 to-green-600 text-white py-3 px-6 rounded-xl hover:from-green-600 hover:to-green-700 transition-all shadow-lg hover:shadow-xl font-semibold"
                     onClick={async () => {
                       setLoading(true);
                       try {

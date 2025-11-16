@@ -1,19 +1,35 @@
-// COLORS
+// COLORS - Modern Glassy Design - Light Blue & Yellow Theme
 :root {
-  --color-primary: #283045;
-  --color-primary-light: #3e455a;
-  --color-primary-very-light: #4f576e;
-  --color-primary-dark: #30384e;
+  --color-primary: #3b82f6;
+  --color-primary-light: #60a5fa;
+  --color-primary-very-light: #93c5fd;
+  --color-primary-dark: #2563eb;
+  --color-primary-gradient: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  --color-primary-gradient-2: linear-gradient(135deg, #fbbf24 0%, #fcd34d 100%);
+  --color-primary-gradient-3: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
 
   --color-admin: rgb(40, 153, 40);
   --color-admin-light: rgb(52, 170, 52);
   --color-admin-dark: rgb(30, 119, 30);
 
-  --color-grey-dark: rgb(34, 34, 34);
-  --color-background: rgb(246, 244, 255);
-  --color-background-2: rgb(228, 227, 233);
+  --color-grey-dark: rgb(30, 30, 30);
+  --color-background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #fefce8 100%);
+  --color-background-solid: #f8fafc;
+  --color-background-2: rgba(255, 255, 255, 0.1);
   --color-black: rgb(0, 0, 0);
   --color-white: rgb(255, 255, 255);
   --default-font-size: 1.6rem;
-  --color-danger: rgb(226, 48, 48);
+  --color-danger: rgb(239, 68, 68);
+
+  // Glassmorphism - White base
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg-strong: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.15);
+  --glass-shadow-hover: 0 12px 48px 0 rgba(59, 130, 246, 0.25);
+  
+  // Text colors
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-white: #ffffff;
 }
