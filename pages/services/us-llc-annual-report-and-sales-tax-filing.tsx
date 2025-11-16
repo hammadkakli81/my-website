@@ -91,7 +91,7 @@ const ServicePage: NextPage = () => {
           <div className="container relative z-10">
             <div className="max-w-4xl mx-auto">
               <div className="bg-white/70 backdrop-blur-xl border border-blue-200/30 rounded-3xl shadow-2xl overflow-hidden">
-                <header className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8">
+                <header className="bg-gradient-to-r from-blue-500 to-blue-600 text-black p-8">
                   <h1 className="text-2xl md:text-5xl font-bold">
                     US LLC ANNUAL REPORT AND SALES TAX FILING
                   </h1>
@@ -104,9 +104,13 @@ const ServicePage: NextPage = () => {
                         <h3 className="text-2xl md:text-4xl text-gray-800">
                           <span className="font-bold">Price: </span>
                           {!!selected && selected !== 'Select Service' ? (
-                            <span className="text-blue-600">${options[selected as keyof typeof options]}</span>
+                            <span className="text-blue-600">
+                              ${options[selected as keyof typeof options]}
+                            </span>
                           ) : (
-                            <span className="italic text-gray-500">Please select service</span>
+                            <span className="italic text-gray-500">
+                              Please select service
+                            </span>
                           )}
                         </h3>
                       </div>
@@ -131,7 +135,7 @@ const ServicePage: NextPage = () => {
                       <a
                         target="_blank"
                         href="https://wa.me/+923008089934"
-                        className="px-8 py-4 flex items-center space-x-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition text-white rounded-xl shadow-lg hover:shadow-xl"
+                        className="px-8 py-4 flex items-center space-x-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition text-black rounded-xl shadow-lg hover:shadow-xl"
                       >
                         <span className="inline-block">Contact me on</span>
                         <BsWhatsapp />
@@ -167,7 +171,7 @@ const ServicePage: NextPage = () => {
                           notificationText: 'Item added in cart',
                         });
                       }}
-                      className="my-2 p-4 rounded-xl min-w-[50px] bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white shadow-lg hover:shadow-xl transition font-semibold"
+                      className="my-2 p-4 rounded-xl min-w-[50px] bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-black shadow-lg hover:shadow-xl transition font-semibold"
                     >
                       Add to Cart
                     </button>
