@@ -86,112 +86,120 @@ const ServicePage: NextPage = () => {
         <title>US LLC Formation | Hammad</title>
       </Head>
       <Layout>
-        <div className="text-xl md:text-3xl bg-gray-100 font-sans my-10 md:my-24 text-gray-900">
-          <div className="overflow-hidden max-w-screen-md mx-auto rounded-lg bg-white shadow-2xl mt-8">
-            <header className="bg-blue-500 text-white p-8 mb-2">
-              <h1 className="text-3xl md:text-6xl">US LLC Formation</h1>
-            </header>
+        <div className="relative min-h-[80vh] py-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-sky-500/10 to-yellow-500/10"></div>
+          <div className="container relative z-10">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white/70 backdrop-blur-xl border border-blue-200/30 rounded-3xl shadow-2xl overflow-hidden">
+                <header className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8">
+                  <h1 className="text-3xl md:text-6xl font-bold">US LLC Formation</h1>
+                </header>
 
-            <div className="p-8">
-              <div className="p-8 rounded-lg w-full border-gray-100 border-4">
-                <div className="flex items-start justify-between">
-                  <div className="w-[60%]">
-                    <h3 className="text-4xl">
-                      <span className="font-bold">Price: </span>
-                      {!!selected && selected !== 'Select Service' ? (
-                        `$${options[selected as keyof typeof options]}`
-                      ) : (
-                        <span className="italic">Please select service</span>
-                      )}
+                <div className="p-8">
+                  <div className="bg-white/60 backdrop-blur-md border border-blue-200/30 rounded-2xl p-6 mb-6">
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+                      <div className="flex-1">
+                        <h3 className="text-2xl md:text-4xl text-gray-800">
+                          <span className="font-bold">Price: </span>
+                          {!!selected && selected !== 'Select Service' ? (
+                            <span className="text-blue-600">${options[selected as keyof typeof options]}</span>
+                          ) : (
+                            <span className="italic text-gray-500">Please select service</span>
+                          )}
+                        </h3>
+                      </div>
+                      <div className="w-full md:w-[40%]">
+                        <select
+                          onChange={e => setSelected(e.target.value)}
+                          placeholder="Select Service"
+                          className="bg-white/80 backdrop-blur-sm border border-blue-200/30 rounded-xl w-full h-[50px] px-4 cursor-pointer text-gray-800 focus:border-blue-400 focus:bg-white transition outline-none"
+                        >
+                          {['Select Service']
+                            .concat(Object.keys(options))
+                            .map(option => (
+                              <option key={option} value={option}>
+                                {option}
+                              </option>
+                            ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    <div className="mt-5 flex flex-wrap items-center gap-4">
+                      <a
+                        target="_blank"
+                        href="https://wa.me/+923008089934"
+                        className="px-8 py-4 flex items-center space-x-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition text-white rounded-xl shadow-lg hover:shadow-xl"
+                      >
+                        <span className="inline-block">Contact me on</span>
+                        <BsWhatsapp />
+                      </a>
+                      <Link
+                        href="/contact"
+                        className="px-8 py-4 bg-white/80 backdrop-blur-md border border-blue-200/30 text-gray-800 rounded-xl hover:bg-white/90 transition shadow-lg hover:shadow-xl"
+                      >
+                        Email me
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/60 backdrop-blur-md border border-blue-200/30 rounded-2xl p-6 mb-6">
+                    <h2 className="text-2xl md:text-4xl font-bold text-gray-800 mb-6">
+                      Our Services and Requirements
+                    </h2>
+                    <h3 className="text-xl md:text-3xl font-semibold text-gray-800 mb-4">
+                      What will I provide in the above charges?
                     </h3>
+                    <ul className="space-y-3 mb-6">
+                      {serviceF.features.map((feature, i) => (
+                        <li key={feature + i} className="flex items-start text-lg text-gray-700">
+                          <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="w-[40%]">
-                    <select
-                      onChange={e => setSelected(e.target.value)}
-                      placeholder="Select Service"
-                      className="bg-gray-100 w-full h-[40px] cursor-pointer"
+
+                  <div className="bg-white/60 backdrop-blur-md border border-blue-200/30 rounded-2xl p-6 mb-6">
+                    <h3 className="text-xl md:text-3xl font-semibold text-gray-800 mb-4">
+                      What documents I need?
+                    </h3>
+                    <ul className="space-y-3">
+                      {serviceF.requirements.map((requirement, i) => (
+                        <li key={i + requirement} className="flex items-start text-lg text-gray-700">
+                          <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-2 flex-shrink-0"></span>
+                          {requirement}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="p-4 w-full flex items-center justify-end">
+                    <button
+                      onClick={() => {
+                        if (!selected || selected === 'Select Service') {
+                          notification.showNotification({
+                            type: 'error',
+                            notificationText: 'No State Selected.',
+                          });
+                          return;
+                        }
+                        cart.addItemToCart({
+                          name: 'US LLC Formation: ' + selected,
+                          // @ts-ignore
+                          price: options[selected],
+                        });
+                        notification.showNotification({
+                          type: 'success',
+                          notificationText: 'Item added in cart',
+                        });
+                      }}
+                      className="my-2 p-4 rounded-xl min-w-[50px] bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white shadow-lg hover:shadow-xl transition font-semibold"
                     >
-                      {['Select Service']
-                        .concat(Object.keys(options))
-                        .map(option => (
-                          <option key={option} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                    </select>
+                      Add to Cart
+                    </button>
                   </div>
                 </div>
-
-                <div className="mt-5 flex items-center space-x-4">
-                  <a
-                    target="_blank"
-                    href="https://wa.me/+923008089934"
-                    className="px-8 py-4 flex items-center space-x-2 bg-green-600 hover:bg-green-700 transition text-white rounded-lg"
-                  >
-                    <span className="inline-block">Contact me on</span>
-                    <BsWhatsapp />
-                  </a>
-                  <Link
-                    href="/contact"
-                    className="px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition"
-                  >
-                    Email me
-                  </Link>
-                </div>
-              </div>
-
-              <header className="rounded-lg bg-gray-700 text-white p-4 my-10">
-                <h1 className="text-3xl md:text-6xl">
-                  Our Services and Requirements
-                </h1>
-              </header>
-              <h2 className="text-3xl md:text-6xl mb-4">
-                What will I provide in the above charges?
-              </h2>
-              <ul className="list-disc pl-6 mb-6 translate-x-3">
-                {serviceF.features.map((feature, i) => (
-                  <li key={feature + i} className="mb-2">
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <div className="bg-gray-200 rounded-lg p-8">
-                <h2 className="text-3xl md:text-6xl mb-4">
-                  What documents I need?
-                </h2>
-                <ul className="list-disc pl-6 translate-x-3">
-                  {serviceF.requirements.map((requirement, i) => (
-                    <li key={i + requirement} className="mb-2">
-                      {requirement}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="p-4 w-full flex items-center justify-end">
-                <button
-                  onClick={() => {
-                    if (!selected) {
-                      notification.showNotification({
-                        type: 'error',
-                        notificationText: 'No State Selected.',
-                      });
-                      return;
-                    }
-                    cart.addItemToCart({
-                      name: 'US LLC Formation: ' + selected,
-                      // @ts-ignore
-                      price: options[selected],
-                    });
-                    notification.showNotification({
-                      type: 'success',
-                      notificationText: 'Item added in cart',
-                    });
-                  }}
-                  className="my-2 p-4 rounded min-w-[50px] bg-green-900 text-white"
-                >
-                  Add to Cart
-                </button>
               </div>
             </div>
           </div>

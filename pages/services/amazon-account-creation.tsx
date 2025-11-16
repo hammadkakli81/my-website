@@ -19,118 +19,74 @@ const ServicePage: NextPage = () => {
         <title>Amazon Account Creation | Hammad</title>
       </Head>
       <Layout>
-        <div className="text-xl md:text-3xl bg-gray-100 font-sans my-10 md:my-24 text-gray-900">
-          <div className="overflow-hidden max-w-screen-md mx-auto rounded-lg bg-white shadow-2xl mt-8">
-            <header className="bg-blue-500 text-white p-8 mb-2">
-              <h1 className="text-3xl md:text-6xl">Amazon Account Creation</h1>
-            </header>
+        <div className="relative min-h-[80vh] py-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-sky-500/10 to-yellow-500/10"></div>
+          <div className="container relative z-10">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white/70 backdrop-blur-xl border border-blue-200/30 rounded-3xl shadow-2xl overflow-hidden">
+                <header className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-8">
+                  <h1 className="text-3xl md:text-6xl font-bold">Amazon Account Creation</h1>
+                </header>
 
-            <div
-              style={{
-                fontFamily: 'Arial, sans-serif',
-                backgroundColor: '#f4f4f9',
-                margin: '0',
-                padding: '0',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100vh',
-              }}
-            >
-              <div
-                style={{
-                  backgroundColor: '#fff',
-                  padding: '20px',
-                  borderRadius: '8px',
-                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-                }}
-              >
-                <h1
-                  style={{
-                    fontSize: '24px',
-                    color: '#333',
-                    marginBottom: '20px',
-                  }}
-                >
-                  Documents Required for Amazon Seller Account
-                </h1>
-                <ul
-                  style={{
-                    listStyleType: 'none',
-                    padding: '0',
-                  }}
-                >
-                  {[
-                    'Passport or CNIC (Chip Card)',
-                    'Bank Statement',
-                    'Credit Card',
-                    'Address',
-                    'Contact Number',
-                    'Email Id',
-                    'Utility Bill',
-                  ].map((item, index) => (
-                    <li
-                      key={index}
-                      style={{
-                        fontSize: '18px',
-                        color: '#555',
-                        margin: '5px 0',
-                        paddingLeft: '20px',
-                        position: 'relative',
-                      }}
+                <div className="p-8">
+                  <div className="bg-white/60 backdrop-blur-md border border-blue-200/30 rounded-2xl p-6 mb-6">
+                    <h2 className="text-2xl font-bold text-gray-800 mb-4">Documents Required for Amazon Seller Account</h2>
+                    <ul className="space-y-3">
+                      {[
+                        'Passport or CNIC (Chip Card)',
+                        'Bank Statement',
+                        'Credit Card',
+                        'Address',
+                        'Contact Number',
+                        'Email Id',
+                        'Utility Bill',
+                      ].map((item, index) => (
+                        <li
+                          key={index}
+                          className="flex items-center text-lg text-gray-700"
+                        >
+                          <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 flex-shrink-0"></span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-4 mb-6">
+                    <a
+                      target="_blank"
+                      href="https://wa.me/+923008089934"
+                      className="px-8 py-4 flex items-center space-x-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition text-white rounded-xl shadow-lg hover:shadow-xl"
                     >
-                      {item}
-                      <span
-                        style={{
-                          content: '•',
-                          color: '#0073e6',
-                          fontWeight: 'bold',
-                          display: 'inline-block',
-                          width: '1em',
-                          marginLeft: '-1em',
-                        }}
-                      ></span>
-                    </li>
-                  ))}
-                </ul>
+                      <span className="inline-block">Contact me on</span>
+                      <BsWhatsapp />
+                    </a>
+                    <Link
+                      href="/contact"
+                      className="px-8 py-4 bg-white/80 backdrop-blur-md border border-blue-200/30 text-gray-800 rounded-xl hover:bg-white/90 transition shadow-lg hover:shadow-xl"
+                    >
+                      Email me
+                    </Link>
+                  </div>
+                  <div className="p-4 w-full flex items-center justify-end">
+                    <button
+                      onClick={() => {
+                        cart.addItemToCart({
+                          name: 'Amazon Account Creation',
+                          price: PRICE,
+                        });
+                        notification.showNotification({
+                          type: 'success',
+                          notificationText: 'Item added in cart',
+                        });
+                      }}
+                      className="my-2 p-4 rounded-xl min-w-[50px] bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white shadow-lg hover:shadow-xl transition font-semibold"
+                    >
+                      Price: ${PRICE} - Add to Cart
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
-
-            <div className="p-8">
-              <div className="flex items-center space-x-4">
-                <a
-                  target="_blank"
-                  href="https://wa.me/+923008089934"
-                  className="px-8 py-4 flex items-center space-x-2 bg-green-600 hover:bg-green-700 transition text-white rounded-lg"
-                >
-                  <span className="inline-block">Contact me on</span>
-                  <BsWhatsapp />
-                </a>
-                <Link
-                  href="/contact"
-                  className="px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition"
-                >
-                  Email me
-                </Link>
-              </div>
-            </div>
-
-            <div className="p-4 w-full flex items-center justify-end">
-              <button
-                onClick={() => {
-                  cart.addItemToCart({
-                    name: 'Amazon Account Creation',
-                    price: PRICE,
-                  });
-                  notification.showNotification({
-                    type: 'success',
-                    notificationText: 'Item added in cart',
-                  });
-                }}
-                className="my-2 p-4 rounded min-w-[50px] bg-green-900 text-white"
-              >
-                Price: ${PRICE} - Add to Cart
-              </button>
             </div>
           </div>
         </div>
