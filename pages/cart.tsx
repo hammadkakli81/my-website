@@ -48,7 +48,7 @@ const Cart: React.FC = () => {
                         <span>${item.price.toFixed(2)}</span>
                       </div>
                       <button
-                        className="ml-4 p-2 rounded-xl bg-gradient-to-r from-red-500 to-red-600 text-yellow-600 hover:from-red-600 hover:to-red-700 transition-all shadow-lg hover:shadow-xl"
+                        className="ml-4 p-2 rounded-xl bg-gradient-to-r from-red-500 to-red-600 text-red-600 hover:from-red-600 hover:to-red-700 transition-all shadow-lg hover:shadow-xl"
                         onClick={() => removeItemFromCart(item.name)}
                       >
                         Remove
