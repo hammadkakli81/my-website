@@ -20,7 +20,9 @@ export default async function handler(
       return res.status(500).json({ message: 'GEMINI_API_KEY not set' });
     }
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({
+      model: "gemini-1.5-flash",
+    });
 
     // Fetch data from database
     const servicesData = await getServices();
