@@ -78,31 +78,39 @@ const ChatBot: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 font-sans">
+    <div className="fixed bottom-6 right-6 z-50 font-sans flex flex-col items-end">
       {/* Chat Window */}
       {isOpen && (
-        <div className="bg-white rounded-lg shadow-2xl w-80 sm:w-96 h-[500px] flex flex-col mb-4 border border-gray-200 overflow-hidden animate-fade-in-up">
+        <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl w-[90vw] sm:w-[450px] h-[70vh] max-h-[800px] flex flex-col mb-6 overflow-hidden animate-fade-in-up transition-all duration-300">
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-4 flex justify-between items-center">
-            <div className="flex items-center gap-2">
-              <FaRobot className="text-xl" />
-              <h3 className="font-semibold">Hammads Assistant</h3>
+          <div className="bg-gradient-to-r from-blue-600/90 to-blue-800/90 backdrop-blur-md p-5 flex justify-between items-center text-white shadow-md">
+            <div className="flex items-center gap-3">
+              <div className="bg-white/20 p-2 rounded-full backdrop-blur-sm">
+                <FaRobot className="text-xl" />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg leading-tight">Hammad's Assistant</h3>
+                <p className="text-xs text-blue-100 opacity-80">Always here to help</p>
+              </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="hover:bg-blue-700 p-1 rounded transition-colors"
+              className="hover:bg-white/20 p-2 rounded-full transition-colors duration-200"
             >
               <FaTimes />
             </button>
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-4">
+          <div className="flex-1 overflow-y-auto p-5 space-y-6 scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600">
             {messages.length === 0 && (
-              <div className="text-center text-gray-500 mt-8">
-                <p className="text-sm">
-                  👋 Hi! I can help you with information about Hammads trainings
-                  and services.
+              <div className="h-full flex flex-col items-center justify-center text-center text-gray-500 p-6 opacity-80">
+                <div className="bg-blue-100 dark:bg-blue-900/30 p-4 rounded-full mb-4">
+                  <FaRobot className="text-4xl text-blue-600 dark:text-blue-400" />
+                </div>
+                <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">Welcome!</h4>
+                <p className="text-sm max-w-[250px]">
+                  👋 Hi! I can help you with information about Hammad's trainings and services. Ask me anything!
                 </p>
               </div>
             )}
@@ -110,32 +118,30 @@ const ChatBot: React.FC = () => {
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`flex ${
-                  msg.role === 'user' ? 'justify-end' : 'justify-start'
-                }`}
+                className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'
+                  }`}
               >
                 <div
-                  className={`max-w-[80%] rounded-lg p-3 text-sm ${
-                    msg.role === 'user'
+                  className={`max-w-[85%] rounded-2xl p-4 text-sm shadow-sm ${msg.role === 'user'
                       ? 'bg-blue-600 text-white rounded-br-none'
-                      : 'bg-white border border-gray-200 text-gray-800 rounded-bl-none shadow-sm'
-                  }`}
+                      : 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 text-gray-800 dark:text-gray-100 rounded-bl-none'
+                    }`}
                 >
                   {/* Wrapper div (ReactMarkdown cannot use className directly) */}
-                  <div className="prose prose-sm max-w-none dark:prose-invert">
+                  <div className="prose prose-sm max-w-none dark:prose-invert prose-p:leading-relaxed prose-a:text-blue-300 hover:prose-a:text-blue-200">
                     <ReactMarkdown
                       components={{
-                        p: props => <p className="mb-1 last:mb-0" {...props} />,
+                        p: props => <p className="mb-2 last:mb-0" {...props} />,
                         ul: props => (
                           <ul className="list-disc ml-4 mb-2" {...props} />
                         ),
                         ol: props => (
                           <ol className="list-decimal ml-4 mb-2" {...props} />
                         ),
-                        li: props => <li className="mb-0.5" {...props} />,
+                        li: props => <li className="mb-1" {...props} />,
                         a: props => (
                           <a
-                            className="text-blue-500 underline hover:text-blue-600"
+                            className="text-blue-500 underline hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
                             {...props}
                           />
                         ),
@@ -153,11 +159,11 @@ const ChatBot: React.FC = () => {
 
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-white border border-gray-200 rounded-lg p-3 rounded-bl-none shadow-sm">
-                  <div className="flex space-x-2">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-100"></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-200"></div>
+                <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-2xl rounded-bl-none p-4 shadow-sm">
+                  <div className="flex space-x-2 items-center h-5">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce delay-100"></div>
+                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce delay-200"></div>
                   </div>
                 </div>
               </div>
@@ -169,22 +175,22 @@ const ChatBot: React.FC = () => {
           {/* Input Area */}
           <form
             onSubmit={handleSubmit}
-            className="p-4 bg-white border-t border-gray-200"
+            className="p-4 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md border-t border-gray-200/30"
           >
-            <div className="flex gap-2">
+            <div className="flex gap-3 items-center">
               <input
                 type="text"
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 placeholder="Ask about trainings..."
-                className="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                className="flex-1 bg-white/80 dark:bg-gray-800/80 border border-gray-200/50 dark:border-gray-700/50 rounded-full px-5 py-3 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all shadow-inner placeholder-gray-400"
               />
               <button
                 type="submit"
                 disabled={!input.trim() || isLoading}
-                className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-3 rounded-full hover:from-blue-500 hover:to-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
               >
-                <FaPaperPlane className="text-sm" />
+                <FaPaperPlane className="text-sm ml-0.5" />
               </button>
             </div>
           </form>
@@ -195,9 +201,11 @@ const ChatBot: React.FC = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-transform hover:scale-110 flex items-center justify-center"
+          className="group w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-3"
         >
-          <FaRobot className="text-2xl" />
+          <FaRobot className="text-3xl group-hover:animate-pulse" />
+          <span className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-ping"></span>
+          <span className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full border-2 border-white"></span>
         </button>
       )}
     </div>
