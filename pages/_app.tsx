@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { SessionProvider } from 'next-auth/react';
 import { NotificationContextProvider } from '../contexts/notification-context';
 import { CartProvider } from '@/contexts/cart-context';
+import ChatBot from '@/components/ChatBot';
 
 // pm2 start npm -- start
 const App = ({ Component, pageProps }: AppProps) => {
@@ -30,6 +31,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           <CartProvider>
             <SessionProvider session={pageProps.session}>
               <Component {...pageProps} />
+              <ChatBot />
               <div id="modal"></div>
             </SessionProvider>
           </CartProvider>
