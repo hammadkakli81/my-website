@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { allServices } from '../../data/all-services';
-import { allTrainings } from '../../data/all-trainings';
+import { getServices } from '../../utils/services.utils';
+import { getTrainings } from '../../utils/trainings.utils';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
@@ -22,9 +22,12 @@ export default async function handler(
 
     const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
-    // Prepare context from data files
-    const servicesContext = JSON.stringify(allServices, null, 2);
-    const trainingsContext = JSON.stringify(allTrainings, null, 2);
+    // Fetch data from database
+    const servicesData = await getServices();
+    const trainingsData = await getTrainings();
+
+    const servicesContext = JSON.stringify(servicesData.data, null, 2);
+    const trainingsContext = JSON.stringify(trainingsData, null, 2);
 
     const systemPrompt = `
       You are a helpful AI assistant for Hammad's website.
