@@ -89,7 +89,7 @@ const ChatBot: React.FC = () => {
                 <FaRobot className="text-xl" />
               </div>
               <div>
-                <h3 className="font-bold text-lg leading-tight">Hammad's Assistant</h3>
+                <h3 className="font-bold text-lg leading-tight">Hammads Assistant</h3>
                 <p className="text-xs text-blue-100 opacity-80">Always here to help</p>
               </div>
             </div>
@@ -110,7 +110,7 @@ const ChatBot: React.FC = () => {
                 </div>
                 <h4 className="font-semibold text-gray-700 dark:text-gray-300 mb-2">Welcome!</h4>
                 <p className="text-sm max-w-[250px]">
-                  👋 Hi! I can help you with information about Hammad's trainings and services. Ask me anything!
+                  👋 Hi! I can help you with information about Hammads trainings and services. Ask me anything!
                 </p>
               </div>
             )}
@@ -123,8 +123,8 @@ const ChatBot: React.FC = () => {
               >
                 <div
                   className={`max-w-[85%] rounded-2xl p-4 text-sm shadow-sm ${msg.role === 'user'
-                      ? 'bg-blue-600 text-white rounded-br-none'
-                      : 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 text-gray-800 dark:text-gray-100 rounded-bl-none'
+                    ? 'bg-blue-600 text-white rounded-br-none'
+                    : 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 text-gray-800 dark:text-gray-100 rounded-bl-none'
                     }`}
                 >
                   {/* Wrapper div (ReactMarkdown cannot use className directly) */}
