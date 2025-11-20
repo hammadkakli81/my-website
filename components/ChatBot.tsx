@@ -28,7 +28,8 @@ const ChatBot: React.FC = () => {
 
   // Explicit class strings for Tailwind to detect during build
   const userBubbleClass = 'bg-yellow-600 text-white shadow-xl';
-  const assistantBubbleClass = 'bg-blue-600 text-white border border-white/30';
+  const assistantBubbleClass =
+    'bg-blue-100 text-gray-900 border border-white/30';
 
   useEffect(() => {
     scrollToBottom();

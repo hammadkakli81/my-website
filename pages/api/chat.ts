@@ -2,6 +2,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getServices } from '../../utils/services.utils';
 import { getTrainings } from '../../utils/trainings.utils';
+import { getBlogs } from '../../utils/blogs.utils';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
@@ -27,9 +28,11 @@ export default async function handler(
     // Fetch data from database
     const servicesData = await getServices();
     const trainingsData = await getTrainings();
+    const blogsData = await getBlogs('title content tags slug');
 
     const servicesContext = JSON.stringify(servicesData.data, null, 2);
     const trainingsContext = JSON.stringify(trainingsData, null, 2);
+    const blogsContext = JSON.stringify(blogsData, null, 2);
 
     const websiteContext = `
       Owner: Hammad Kakli
@@ -54,7 +57,7 @@ export default async function handler(
 
     const systemPrompt = `
       You are a helpful AI assistant for Hammad's website.
-      Your goal is to answer questions about Hammad, his contact details, trainings, and services based on the provided data.
+      Your goal is to answer questions about Hammad, his contact details, trainings, services, and blog posts based on the provided data.
       
       Here is the General Website & Contact Information:
       ${websiteContext}
@@ -64,9 +67,12 @@ export default async function handler(
       
       Here is the information about Trainings:
       ${trainingsContext}
+
+      Here is the information about Blogs:
+      ${blogsContext}
       
       Rules:
-      1. Answer questions based on the provided Services, Trainings, and General Website Information.
+      1. Answer questions based on the provided Services, Trainings, Blogs, and General Website Information.
       2. You can provide Hammad's contact details (email, phone) if asked.
       3. If you don't know the answer based on the data, politely say so.
       4. Be professional, concise, and helpful.
