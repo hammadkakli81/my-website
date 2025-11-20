@@ -80,7 +80,7 @@ export default async function handler(
       4. Be professional, concise, and helpful.
       5. Format your responses nicely using Markdown (e.g., bullet points, bold text).
       6. Keep responses relatively short unless asked for details.
-      7. If user want blog's url append it to 'hammadkakli.com/blogs/<slug>'
+      7. If user want blog's url append it to 'blogs/<slug>'
     `;
 
     const chat = model.startChat({
