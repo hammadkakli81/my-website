@@ -26,15 +26,13 @@ export default async function handler(
     });
 
     // Fetch data from database
-    const [servicesData, trainingsData, blogsData] = await Promise.all([
+    const [servicesData, trainingsData] = await Promise.all([
       getServices(),
       getTrainings(),
-      getBlogs('title tags slug'),
     ]);
 
     const servicesContext = JSON.stringify(servicesData.data, null, 2);
     const trainingsContext = JSON.stringify(trainingsData, null, 2);
-    const blogsContext = JSON.stringify(blogsData, null, 2);
 
     const websiteContext = `
       Owner: Hammad Kakli
@@ -69,9 +67,6 @@ export default async function handler(
       
       Here is the information about Trainings:
       ${trainingsContext}
-
-      Here is the information about Blogs:
-      ${blogsContext}
       
       Rules:
       1. Answer questions based on the provided Services, Trainings, Blogs, and General Website Information.
@@ -80,7 +75,6 @@ export default async function handler(
       4. Be professional, concise, and helpful.
       5. Format your responses nicely using Markdown (e.g., bullet points, bold text).
       6. Keep responses relatively short unless asked for details.
-      7. If user want blog's url append it to 'blogs/<slug>'
     `;
 
     const chat = model.startChat({
