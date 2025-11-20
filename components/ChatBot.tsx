@@ -106,10 +106,13 @@ const ChatBot: React.FC = () => {
                 </p>
               </div>
             )}
+
             {messages.map((msg, index) => (
               <div
                 key={index}
-                className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`flex ${
+                  msg.role === 'user' ? 'justify-end' : 'justify-start'
+                }`}
               >
                 <div
                   className={`max-w-[80%] rounded-lg p-3 text-sm ${
@@ -118,37 +121,36 @@ const ChatBot: React.FC = () => {
                       : 'bg-white border border-gray-200 text-gray-800 rounded-bl-none shadow-sm'
                   }`}
                 >
-                  <ReactMarkdown
-                    className="prose prose-sm max-w-none dark:prose-invert"
-                    components={{
-                      p: ({ node, ...props }) => (
-                        <p className="mb-1 last:mb-0" {...props} />
-                      ),
-                      ul: ({ node, ...props }) => (
-                        <ul className="list-disc ml-4 mb-2" {...props} />
-                      ),
-                      ol: ({ node, ...props }) => (
-                        <ol className="list-decimal ml-4 mb-2" {...props} />
-                      ),
-                      li: ({ node, ...props }) => (
-                        <li className="mb-0.5" {...props} />
-                      ),
-                      a: ({ node, ...props }) => (
-                        <a
-                          className="text-blue-500 hover:underline"
-                          {...props}
-                        />
-                      ),
-                      strong: ({ node, ...props }) => (
-                        <strong className="font-bold" {...props} />
-                      ),
-                    }}
-                  >
-                    {msg.content}
-                  </ReactMarkdown>
+                  {/* Wrapper div (ReactMarkdown cannot use className directly) */}
+                  <div className="prose prose-sm max-w-none dark:prose-invert">
+                    <ReactMarkdown
+                      components={{
+                        p: props => <p className="mb-1 last:mb-0" {...props} />,
+                        ul: props => (
+                          <ul className="list-disc ml-4 mb-2" {...props} />
+                        ),
+                        ol: props => (
+                          <ol className="list-decimal ml-4 mb-2" {...props} />
+                        ),
+                        li: props => <li className="mb-0.5" {...props} />,
+                        a: props => (
+                          <a
+                            className="text-blue-500 underline hover:text-blue-600"
+                            {...props}
+                          />
+                        ),
+                        strong: props => (
+                          <strong className="font-bold" {...props} />
+                        ),
+                      }}
+                    >
+                      {msg.content}
+                    </ReactMarkdown>
+                  </div>
                 </div>
               </div>
             ))}
+
             {isLoading && (
               <div className="flex justify-start">
                 <div className="bg-white border border-gray-200 rounded-lg p-3 rounded-bl-none shadow-sm">
@@ -160,6 +162,7 @@ const ChatBot: React.FC = () => {
                 </div>
               </div>
             )}
+
             <div ref={messagesEndRef} />
           </div>
 
