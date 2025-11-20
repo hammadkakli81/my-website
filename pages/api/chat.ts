@@ -26,9 +26,11 @@ export default async function handler(
     });
 
     // Fetch data from database
-    const servicesData = await getServices();
-    const trainingsData = await getTrainings();
-    const blogsData = await getBlogs('title content tags slug');
+    const [servicesData, trainingsData, blogsData] = await Promise.all([
+      getServices(),
+      getTrainings(),
+      getBlogs('title tags slug'),
+    ]);
 
     const servicesContext = JSON.stringify(servicesData.data, null, 2);
     const trainingsContext = JSON.stringify(trainingsData, null, 2);
@@ -78,6 +80,7 @@ export default async function handler(
       4. Be professional, concise, and helpful.
       5. Format your responses nicely using Markdown (e.g., bullet points, bold text).
       6. Keep responses relatively short unless asked for details.
+      7. If user want blog's url append it to 'hammadkakli.com/blogs/<slug>'
     `;
 
     const chat = model.startChat({
