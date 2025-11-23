@@ -5,6 +5,7 @@ import styles from './about.module.scss';
 const About: FC = () => {
   return (
     <div className={styles.about}>
+      <div className={styles.about__background}></div>
       <div
         className={styles.about__image_container + ' u-margin-bottom-medium'}
       >
