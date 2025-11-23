@@ -1,28 +1,23 @@
 import classNames from 'classnames';
 import { signIn } from 'next-auth/react';
 import { useCallback, type FC } from 'react';
-import { AiFillGoogleSquare } from 'react-icons/ai';
+import { FcGoogle } from 'react-icons/fc';
 
 type Props = { lightOnly?: boolean; big?: boolean };
 
 const GoogleAuthButton: FC<Props> = ({ lightOnly, big }) => {
-  const getColors = useCallback(() => {
-    return lightOnly
-      ? 'text-primary-dark bg-primary'
-      : 'bg-primary-dark text-primary dark:bg-primary dark:text-primary-dark';
-  }, [lightOnly]);
-
   return (
     <button
       className={classNames(
-        'flex items-center justify-center space-x-1 rounded transition duration-100 hover:scale-[0.97]',
-        getColors(),
-        `${big ? 'text-4xl py-5 px-10' : 'px-3 py-2'}`
+        'group flex items-center justify-center space-x-3 rounded-full border border-gray-300 bg-white px-6 py-3 transition-all duration-200 hover:bg-gray-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:bg-zinc-700',
+        big ? 'w-full text-lg' : 'text-base'
       )}
       onClick={() => signIn('google')}
     >
-      <div className="inline-block">Continue With</div>
-      <AiFillGoogleSquare size={big ? 50 : 24} />
+      <FcGoogle size={big ? 28 : 24} />
+      <span className="font-medium text-gray-700 group-hover:text-gray-900 dark:text-gray-200 dark:group-hover:text-white">
+        Continue with Google
+      </span>
     </button>
   );
 };
