@@ -12,7 +12,7 @@ const HomePageTrainings: FC<{ trainings: Training[] }> = ({ trainings }) => {
           className={styles.homepage_trainings__content}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8 }}
         >
           <h2 className="heading-secondary heading-secondary__underline u-margin-bottom-medium">
